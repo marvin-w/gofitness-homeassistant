@@ -18,6 +18,10 @@ ingress: true
 ingress_port: 8099
 panel_icon: mdi:dumbbell
 panel_title: GoFitness
+# Show the sidebar panel to every Home Assistant user, not just admins, so the
+# whole household can open the app. Each user still gets their own profile via
+# ingress auth. Non-admins cannot see the add-on's config/logs pages regardless.
+panel_admin: false
 hassio_api: true
 homeassistant_api: true
 host_network: false

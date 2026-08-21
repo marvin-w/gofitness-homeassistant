@@ -31,6 +31,8 @@ First release.
 - **Gamification** — XP, levels, streaks, 28 badges and a milestone track toward
   a healthy BMI.
 - **Per-person weight tracking** tied to Home Assistant users via ingress auth.
+- **Available to every household member**, not just admins (`panel_admin: false`),
+  with each Home Assistant user getting their own private profile.
 - **Home Assistant sensors** — weight, BMI, calories and streak published back to
   Home Assistant, plus optional fitness-tracker step import.
 - **German and English** throughout the UI and recipes (German primary).
