@@ -61,6 +61,7 @@ const DICT = {
     field_name: 'Name',
     field_sex: 'Geschlecht',
     field_birth_date: 'Geburtsdatum',
+    date_placeholder: 'TT.MM.JJJJ',
     field_height: 'Größe',
     field_weight: 'Aktuelles Gewicht',
     field_target_weight: 'Wunschgewicht',
@@ -132,6 +133,7 @@ const DICT = {
     todays_meals: 'Heute gegessen',
     todays_workouts: 'Heute bewegt',
     streak_days: '{n} Tage am Stück',
+    streak_days_one: '{n} Tag am Stück',
     level_label: 'Level {n}',
     xp_to_next: 'noch {n} XP bis Level {next}',
     next_milestone: 'Nächstes Etappenziel',
@@ -352,6 +354,7 @@ const DICT = {
     field_name: 'Name',
     field_sex: 'Sex',
     field_birth_date: 'Date of birth',
+    date_placeholder: 'DD.MM.YYYY',
     field_height: 'Height',
     field_weight: 'Current weight',
     field_target_weight: 'Target weight',
@@ -422,6 +425,7 @@ const DICT = {
     todays_meals: 'Eaten today',
     todays_workouts: 'Moved today',
     streak_days: '{n} days in a row',
+    streak_days_one: '{n} day in a row',
     level_label: 'Level {n}',
     xp_to_next: '{n} XP to level {next}',
     next_milestone: 'Next milestone',
@@ -666,6 +670,12 @@ export function getLang() {
  * Falls back to German, then to the key itself.
  */
 export function t(key, params) {
+  // Pluralization: when a count {n} is exactly 1, prefer a "<key>_one" variant
+  // if one is defined, so "1 Tage" becomes "1 Tag" / "1 days" becomes "1 day".
+  if (params && params.n === 1 &&
+    (DICT[current]?.[key + '_one'] ?? DICT.de[key + '_one']) !== undefined) {
+    key = key + '_one';
+  }
   let s = DICT[current]?.[key];
   if (s === undefined) s = DICT.de[key];
   if (s === undefined) return key;
@@ -696,24 +706,49 @@ export function num(value, decimals = 0) {
   });
 }
 
-/** Format a YYYY-MM-DD or ISO timestamp as a short readable date. */
+/** Format a YYYY-MM-DD or ISO timestamp as a German date, DD.MM.YYYY. The
+ *  German date format is used regardless of the interface language. */
 export function shortDate(value) {
   if (!value) return '';
   const d = new Date(value.length === 10 ? value + 'T12:00:00' : value);
   if (Number.isNaN(d.getTime())) return value;
-  return d.toLocaleDateString(current === 'de' ? 'de-DE' : 'en-GB', {
+  return d.toLocaleDateString('de-DE', {
     day: '2-digit',
-    month: 'short',
+    month: '2-digit',
+    year: 'numeric',
   });
 }
 
-/** Format an ISO timestamp as a time of day. */
+/** Format an ISO timestamp as a 24-hour time of day (German convention). */
 export function shortTime(value) {
   if (!value) return '';
   const d = new Date(value);
   if (Number.isNaN(d.getTime())) return '';
-  return d.toLocaleTimeString(current === 'de' ? 'de-DE' : 'en-GB', {
+  return d.toLocaleTimeString('de-DE', {
     hour: '2-digit',
     minute: '2-digit',
   });
+}
+
+/** Convert an ISO date (YYYY-MM-DD) to the German format DD.MM.YYYY. Returns an
+ *  empty string when unset; passes through anything it cannot parse. */
+export function isoToDE(iso) {
+  if (!iso) return '';
+  const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso);
+  return m ? `${m[3]}.${m[2]}.${m[1]}` : iso;
+}
+
+/** Parse a German date (DD.MM.YYYY, single digits allowed) into an ISO date.
+ *  Returns '' when the text is incomplete or not a real calendar date, so the
+ *  caller can keep the last valid value while the user is still typing. */
+export function deToISO(text) {
+  if (!text) return '';
+  const m = /^\s*(\d{1,2})\.(\d{1,2})\.(\d{4})\s*$/.exec(text);
+  if (!m) return '';
+  const day = +m[1], mon = +m[2], year = +m[3];
+  if (mon < 1 || mon > 12 || day < 1 || day > 31) return '';
+  const iso = `${year}-${String(mon).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+  const d = new Date(iso + 'T12:00:00');
+  // Reject impossible days like 31.02. (JS would roll them over).
+  return Number.isNaN(d.getTime()) || d.getUTCDate() !== day ? '' : iso;
 }

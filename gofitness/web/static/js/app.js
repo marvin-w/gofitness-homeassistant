@@ -1,7 +1,7 @@
 // Application shell: state, routing between views, and the setup wizard.
 
 import { api, ApiError } from './api.js';
-import { t, setLang, getLang, badgeText, noteText, num, shortDate, shortTime } from './i18n.js';
+import { t, setLang, getLang, badgeText, noteText, num, shortDate, shortTime, isoToDE, deToISO } from './i18n.js';
 import { el, fill, toast, sheet, field, optionGroup, calorieRing, progressBar, weightChart, kcalChart } from './ui.js';
 
 const LANG_KEY = 'gofitness.lang';
@@ -1257,8 +1257,9 @@ function profileView() {
         el('input', { type: 'text', value: draft.display_name,
           onInput: (e) => { draft.display_name = e.target.value; } })),
       field(t('field_birth_date'),
-        el('input', { type: 'date', value: draft.birth_date,
-          onInput: (e) => { draft.birth_date = e.target.value; } })),
+        el('input', { type: 'text', inputmode: 'numeric', placeholder: t('date_placeholder'),
+          value: isoToDE(draft.birth_date),
+          onInput: (e) => { const iso = deToISO(e.target.value); if (iso) draft.birth_date = iso; } })),
       field(`${t('field_height')} (${t('cm')})`,
         el('input', { type: 'number', value: draft.height_cm, min: '120', max: '230',
           onInput: (e) => { draft.height_cm = e.target.value; } })),
@@ -1538,8 +1539,9 @@ function renderWizard() {
             el('input', { type: 'text', value: draft.display_name,
               onInput: (e) => { draft.display_name = e.target.value; } })),
           field(t('field_birth_date'),
-            el('input', { type: 'date', value: draft.birth_date,
-              onInput: (e) => { draft.birth_date = e.target.value; } })),
+            el('input', { type: 'text', inputmode: 'numeric', placeholder: t('date_placeholder'),
+              value: isoToDE(draft.birth_date),
+              onInput: (e) => { const iso = deToISO(e.target.value); if (iso) draft.birth_date = iso; } })),
           el('div', { class: 'field__label', text: t('field_sex') }),
           optionGroup('sex', [
             { value: 'female', label: t('sex_female') },
