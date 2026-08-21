@@ -1,0 +1,54 @@
+name: Release
+
+# Whenever the add-on version in config.yaml increases on main, publish a
+# matching git tag + GitHub Release. Home Assistant itself detects add-on
+# updates from the config.yaml `version` (not from tags), so the version bump is
+# what makes the "Update" button appear; this release is for humans and release
+# notes. Bumping the version and pushing is therefore all that is needed.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - gofitness/config.yaml
+      - gofitness/CHANGELOG.md
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Read add-on version
+        id: v
+        run: |
+          version="$(grep -E '^version:' gofitness/config.yaml | head -1 \
+            | sed -E 's/version:[[:space:]]*"?([^"]+)"?[[:space:]]*/\1/')"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "Add-on version: $version"
+
+      - name: Create release if it does not exist yet
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          tag="v${{ steps.v.outputs.version }}"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "Release $tag already exists — nothing to do."
+            exit 0
+          fi
+          # Pull this version's section out of the changelog for the notes.
+          notes="$(awk -v v="${{ steps.v.outputs.version }}" '
+            $0 ~ "^## " v "( |$)" {grab=1; next}
+            grab && /^## / {exit}
+            grab {print}
+          ' gofitness/CHANGELOG.md)"
+          [ -z "$notes" ] && notes="See gofitness/CHANGELOG.md."
+          gh release create "$tag" \
+            --title "$tag" \
+            --target "$GITHUB_SHA" \
+            --notes "$notes"
+          echo "Published $tag."
