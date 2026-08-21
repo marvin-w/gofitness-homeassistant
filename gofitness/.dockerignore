@@ -1,0 +1,11 @@
+# The image build only needs the Go module and run.sh. Everything else is add-on
+# metadata or docs that would bloat the context and bust the layer cache.
+*.md
+DOCS.md
+CHANGELOG.md
+config.yaml
+build.yaml
+icon.png
+logo.png
+.git
+.gitignore

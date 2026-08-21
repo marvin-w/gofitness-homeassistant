@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <!-- The base href is rewritten by the server from the X-Ingress-Path header.
+       Every asset and API call below is relative, so the app works both behind
+       Home Assistant ingress and on the plain port. -->
+  <base href="__BASE_HREF__">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#121211">
+  <title>GoFitness</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💪</text></svg>">
+</head>
+<body>
+  <div id="app"></div>
+  <div id="sheets"></div>
+  <div id="toasts"></div>
+  <noscript>
+    <div style="padding:24px;color:#fff;font-family:system-ui">
+      GoFitness braucht JavaScript. · GoFitness needs JavaScript.
+    </div>
+  </noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

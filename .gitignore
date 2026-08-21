@@ -1,0 +1,21 @@
+# Go build output
+/gofitness/gofitness
+/gofitness/cmd/gofitness/gofitness
+*.exe
+*.test
+*.out
+
+# Local runtime data
+/data/
+*.db
+*.db-shm
+*.db-wal
+
+# Internal session scratch, not part of the published add-on
+/HANDOFF.md
+
+# Editor / OS
+.DS_Store
+*.swp
+.idea/
+.vscode/

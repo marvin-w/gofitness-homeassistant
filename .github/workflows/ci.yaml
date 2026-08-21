@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  go:
+    name: Go build, vet & test
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: gofitness
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: gofitness/go.mod
+          cache-dependency-path: gofitness/go.sum
+
+      - name: Verify formatting
+        run: |
+          unformatted="$(gofmt -l .)"
+          if [ -n "$unformatted" ]; then
+            echo "These files are not gofmt-clean:"
+            echo "$unformatted"
+            exit 1
+          fi
+
+      - name: go vet
+        run: go vet ./...
+
+      - name: Build
+        run: go build ./...
+
+      - name: Test
+        run: go test -race ./...
+
+  addon:
+    name: Add-on lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint add-on config
+        uses: frenck/action-addon-linter@v2
+        with:
+          path: ./gofitness
+
+  docker:
+    name: Docker build (amd64)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # A sanity build for one architecture: proves the Dockerfile and the
+      # cross-compile wiring work without pushing anything anywhere.
+      - name: Build image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./gofitness
+          file: ./gofitness/Dockerfile
+          push: false
+          build-args: |
+            BUILD_FROM=ghcr.io/home-assistant/amd64-base:3.21
+            BUILD_ARCH=amd64
+            BUILD_VERSION=ci
