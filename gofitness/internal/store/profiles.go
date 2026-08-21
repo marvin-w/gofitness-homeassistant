@@ -199,9 +199,11 @@ func (s *Store) SetTrackerLink(ctx context.Context, userID, kind, entityID strin
 	return err
 }
 
-// ListUsers returns every known user id and name.
+// ListUsers returns every known real user id and name, excluding the shared
+// household pseudo-user.
 func (s *Store) ListUsers(ctx context.Context) ([]struct{ ID, Name string }, error) {
-	rows, err := s.db.QueryContext(ctx, `SELECT id, name FROM users ORDER BY created_at`)
+	rows, err := s.db.QueryContext(ctx,
+		`SELECT id, name FROM users WHERE id != ? ORDER BY created_at`, HouseholdID)
 	if err != nil {
 		return nil, err
 	}

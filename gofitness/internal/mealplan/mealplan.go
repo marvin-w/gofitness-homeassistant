@@ -44,6 +44,9 @@ type Entry struct {
 	ProteinG float64 `json:"protein_g"`
 	CarbsG   float64 `json:"carbs_g"`
 	FatG     float64 `json:"fat_g"`
+	// PortionG is the approximate finished weight of one portion of this dish,
+	// so the plan can say how much to actually cook.
+	PortionG float64 `json:"portion_g"`
 	// Leftover marks the second appearance of a dish cooked in bulk earlier.
 	Leftover bool `json:"leftover"`
 	Cooked   bool `json:"cooked"`
@@ -89,6 +92,10 @@ type Options struct {
 	Seed uint64
 	// CookOnceEatTwice repeats bulk-friendly dinners as the next day's lunch.
 	CookOnceEatTwice bool
+	// MaxPortions caps how many recipe servings one slot may cook. For a shared
+	// household plan sized to everyone's combined target this scales with the
+	// number of people; 0 falls back to 2.
+	MaxPortions float64
 	// Lang selects the language for titles, notes and day names.
 	Lang string
 }
@@ -114,6 +121,11 @@ func Generate(book *recipes.Book, opts Options) Plan {
 		BreastfeedingSafe: opts.BreastfeedingSafe,
 		ExcludeTags:       prefs.ExcludeTags,
 		ExcludeIngredient: prefs.ExcludeIngredients,
+	}
+
+	maxPortions := opts.MaxPortions
+	if maxPortions < 1 {
+		maxPortions = 2
 	}
 
 	lang := recipes.NormalizeLang(opts.Lang)
@@ -171,13 +183,13 @@ func Generate(book *recipes.Book, opts Options) Plan {
 			}
 
 			slotTarget := opts.TargetKcal * shares[slot]
-			pick := choose(candidates, slotTarget, used, fishCount, prefs.MaxFishPerWeek, rnd)
+			pick := choose(candidates, slotTarget, used, fishCount, prefs.MaxFishPerWeek, maxPortions, rnd)
 			if pick == nil {
 				continue
 			}
 
 			loc := recipes.Localize(*pick, lang)
-			portions := clampPortions(slotTarget / math.Max(pick.Kcal, 1))
+			portions := clampPortions(slotTarget/math.Max(pick.Kcal, 1), maxPortions)
 			e := Entry{
 				DayIndex: d,
 				Day:      day.Name,
@@ -190,6 +202,7 @@ func Generate(book *recipes.Book, opts Options) Plan {
 				ProteinG: round(pick.ProteinG * portions),
 				CarbsG:   round(pick.CarbsG * portions),
 				FatG:     round(pick.FatG * portions),
+				PortionG: pick.PortionG,
 			}
 			day.Entries = append(day.Entries, e)
 
@@ -227,7 +240,7 @@ func SlotName(slot, lang string) string { return recipes.TranslateMealType(slot,
 
 // choose picks the recipe whose calories land closest to the slot target,
 // penalising dishes already used this week so the plan stays varied.
-func choose(candidates []recipes.Recipe, target float64, used map[string]int, fishCount, maxFish int, rnd *rand) *recipes.Recipe {
+func choose(candidates []recipes.Recipe, target float64, used map[string]int, fishCount, maxFish int, maxPortions float64, rnd *rand) *recipes.Recipe {
 	type scored struct {
 		r     recipes.Recipe
 		score float64
@@ -238,7 +251,7 @@ func choose(candidates []recipes.Recipe, target float64, used map[string]int, fi
 			continue
 		}
 		// Distance from the slot target, normalised.
-		portions := clampPortions(target / math.Max(r.Kcal, 1))
+		portions := clampPortions(target/math.Max(r.Kcal, 1), maxPortions)
 		diff := math.Abs(r.Kcal*portions-target) / math.Max(target, 1)
 		score := diff
 		// Each previous appearance makes a dish much less attractive.
@@ -269,13 +282,17 @@ func choose(candidates []recipes.Recipe, target float64, used map[string]int, fi
 	return &best
 }
 
-// clampPortions keeps portion sizes realistic: no quarter-plates, no triples.
-func clampPortions(p float64) float64 {
+// clampPortions keeps portion sizes realistic: never less than half a serving,
+// never more than the household could plausibly eat in one sitting.
+func clampPortions(p, max float64) float64 {
+	if max < 1 {
+		max = 2
+	}
 	if p < 0.5 {
 		p = 0.5
 	}
-	if p > 2 {
-		p = 2
+	if p > max {
+		p = max
 	}
 	// Round to quarter portions so the number means something in a kitchen.
 	return math.Round(p*4) / 4
@@ -312,16 +329,14 @@ var categoryOrder = []string{
 	"Trockenwaren", "Konserven", "Backen & Gewürze", "Getränke", "Sonstiges",
 }
 
-// ShoppingList aggregates every ingredient in the plan, scaled to the household
-// size, merging identical name/unit pairs into a single line.
+// ShoppingList aggregates every ingredient in the plan, merging identical
+// name/unit pairs into a single line.
 //
-// The scaling assumes everyone in the household eats a similar portion of the
-// planned dish. That is an approximation — it is meant to get the weekly shop
-// roughly right, not to be a per-person nutrition calculation.
-func ShoppingList(book *recipes.Book, plan Plan, householdSize int, lang string) []ShoppingItem {
-	if householdSize <= 0 {
-		householdSize = 1
-	}
+// Each entry's Portions already covers the whole household — the plan is sized
+// to everyone's combined calorie target — so the ingredients are scaled by the
+// portion count directly. This is still a shopping approximation, not a
+// per-person nutrition calculation.
+func ShoppingList(book *recipes.Book, plan Plan, lang string) []ShoppingItem {
 	type key struct{ name, unit string }
 	agg := map[key]*ShoppingItem{}
 
@@ -334,8 +349,7 @@ func ShoppingList(book *recipes.Book, plan Plan, householdSize int, lang string)
 			if !ok {
 				continue
 			}
-			servings := e.Portions * float64(householdSize)
-			for _, ing := range r.ScaleIngredients(servings) {
+			for _, ing := range r.ScaleIngredients(e.Portions) {
 				// Aggregate on the German name so the same ingredient merges
 				// regardless of the display language, then translate once.
 				k := key{strings.ToLower(ing.Name), ing.Unit}

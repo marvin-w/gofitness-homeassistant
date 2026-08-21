@@ -25,7 +25,7 @@ func (s *Server) handleGetPlan(w http.ResponseWriter, r *http.Request, rc *reqCt
 	week := parseWeek(r, rc.Now)
 	weekKey := week.Format("2006-01-02")
 
-	planID, err := s.store.PlanID(ctx, rc.User.UserID, weekKey)
+	planID, err := s.store.PlanID(ctx, store.HouseholdID, weekKey)
 	if err != nil && !errors.Is(err, store.ErrNotFound) {
 		return err
 	}
@@ -35,7 +35,7 @@ func (s *Server) handleGetPlan(w http.ResponseWriter, r *http.Request, rc *reqCt
 			"week_start": weekKey,
 			"saved":      false,
 			"plan":       generated,
-			"shopping":   mealplan.ShoppingList(s.book, generated, rc.User.Prefs.HouseholdSize, rc.Lang),
+			"shopping":   mealplan.ShoppingList(s.book, generated, rc.Lang),
 		})
 		return nil
 	}
@@ -79,7 +79,7 @@ func (s *Server) handleGeneratePlan(w http.ResponseWriter, r *http.Request, rc *
 	weekKey := week.Format("2006-01-02")
 
 	generated := s.generate(ctx, rc, week, req.Shuffle)
-	shopping := mealplan.ShoppingList(s.book, generated, rc.User.Prefs.HouseholdSize, rc.Lang)
+	shopping := mealplan.ShoppingList(s.book, generated, rc.Lang)
 
 	entries := make([]store.PlanEntry, 0, 28)
 	for _, day := range generated.Days {
@@ -102,7 +102,7 @@ func (s *Server) handleGeneratePlan(w http.ResponseWriter, r *http.Request, rc *
 		})
 	}
 
-	planID, err := s.store.SavePlan(ctx, rc.User.UserID, weekKey, entries, items)
+	planID, err := s.store.SavePlan(ctx, store.HouseholdID, weekKey, entries, items)
 	if err != nil {
 		return err
 	}
@@ -128,25 +128,60 @@ func (s *Server) handleGeneratePlan(w http.ResponseWriter, r *http.Request, rc *
 	return nil
 }
 
-// generate runs the planner for a week with the user's current settings.
+// generate runs the planner for a week. The plan is shared by the whole
+// household, so it is sized to the combined calorie target of everyone who has
+// finished setup and made lactation-safe if anyone in the house is
+// breastfeeding. "Cook once, eat twice" is always on.
 func (s *Server) generate(ctx context.Context, rc *reqCtx, week time.Time, shuffle int) mealplan.Plan {
-	nutriPlan := nutrition.Calculate(s.nutritionProfile(ctx, rc.User))
+	target, breastfeeding := s.householdPlanInputs(ctx)
+	if target <= 0 {
+		// No one is fully set up yet: fall back to the requesting user's target
+		// so the preview is still sensible.
+		target = nutrition.Calculate(s.nutritionProfile(ctx, rc.User)).TargetKcal
+	}
 
 	dates := make([]string, 7)
 	for i := range dates {
 		dates[i] = week.AddDate(0, 0, i).Format("2006-01-02")
 	}
 
+	household := rc.User.Prefs.HouseholdSize
+	if household < 1 {
+		household = 1
+	}
+
 	return mealplan.Generate(s.book, mealplan.Options{
 		WeekStart:         week.Format("2006-01-02"),
 		Dates:             dates,
-		TargetKcal:        nutriPlan.TargetKcal,
+		TargetKcal:        target,
 		Prefs:             rc.User.Prefs,
-		BreastfeedingSafe: rc.User.Breastfeeding == "partial" || rc.User.Breastfeeding == "exclusive",
-		Seed:              seedFor(rc.User.UserID, week.Format("2006-01-02"), shuffle),
-		CookOnceEatTwice:  rc.User.Prefs.CookOnceEatTwice,
+		BreastfeedingSafe: breastfeeding,
+		Seed:              seedFor(store.HouseholdID, week.Format("2006-01-02"), shuffle),
+		CookOnceEatTwice:  true,
+		MaxPortions:       float64(household) * 2,
 		Lang:              rc.Lang,
 	})
+}
+
+// householdPlanInputs sums the daily calorie targets of every household member
+// who has finished setup and reports whether anyone is breastfeeding. The plan
+// is sized so there is enough cooked for everyone to eat to their own target.
+func (s *Server) householdPlanInputs(ctx context.Context) (targetKcal float64, breastfeeding bool) {
+	users, err := s.store.ListUsers(ctx)
+	if err != nil {
+		return 0, false
+	}
+	for _, u := range users {
+		prof, err := s.store.GetProfile(ctx, u.ID)
+		if err != nil || !prof.SetupDone {
+			continue
+		}
+		targetKcal += nutrition.Calculate(s.nutritionProfile(ctx, prof)).TargetKcal
+		if prof.Breastfeeding == "partial" || prof.Breastfeeding == "exclusive" {
+			breastfeeding = true
+		}
+	}
+	return targetKcal, breastfeeding
 }
 
 // storedEntry adds the database id to a plan entry so the frontend can tick it
@@ -238,6 +273,7 @@ func (s *Server) loadStoredPlan(ctx context.Context, rc *reqCtx, planID int64, w
 				ProteinG: round0(rec.ProteinG * e.Servings),
 				CarbsG:   round0(rec.CarbsG * e.Servings),
 				FatG:     round0(rec.FatG * e.Servings),
+				PortionG: rec.PortionG,
 				Cooked:   e.Cooked,
 			},
 		}
@@ -280,7 +316,7 @@ func (s *Server) handleEntryCooked(w http.ResponseWriter, r *http.Request, rc *r
 		return err
 	}
 	ctx := r.Context()
-	if err := s.store.SetEntryCooked(ctx, rc.User.UserID, id, req.Cooked); err != nil {
+	if err := s.store.SetEntryCooked(ctx, store.HouseholdID, id, req.Cooked); err != nil {
 		return err
 	}
 	plan := nutrition.Calculate(s.nutritionProfile(ctx, rc.User))
@@ -310,7 +346,7 @@ func (s *Server) handleLogPlannedMeal(w http.ResponseWriter, r *http.Request, rc
 
 	ctx := r.Context()
 	week := parseWeek(r, rc.Now)
-	planID, err := s.store.PlanID(ctx, rc.User.UserID, week.Format("2006-01-02"))
+	planID, err := s.store.PlanID(ctx, store.HouseholdID, week.Format("2006-01-02"))
 	if err != nil {
 		return notFound("no meal plan for this week")
 	}
@@ -363,7 +399,7 @@ func (s *Server) handleLogPlannedMeal(w http.ResponseWriter, r *http.Request, rc
 	if err != nil {
 		return err
 	}
-	if err := s.store.SetEntryCooked(ctx, rc.User.UserID, id, true); err != nil {
+	if err := s.store.SetEntryCooked(ctx, store.HouseholdID, id, true); err != nil {
 		return err
 	}
 
@@ -402,7 +438,7 @@ func (s *Server) handleCheckShopping(w http.ResponseWriter, r *http.Request, rc 
 	if err := decodeJSON(r, &req); err != nil {
 		return err
 	}
-	if err := s.store.SetShoppingChecked(r.Context(), rc.User.UserID, id, req.Checked); err != nil {
+	if err := s.store.SetShoppingChecked(r.Context(), store.HouseholdID, id, req.Checked); err != nil {
 		return err
 	}
 	writeJSON(w, http.StatusOK, map[string]any{"ok": true})

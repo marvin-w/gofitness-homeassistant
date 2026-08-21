@@ -743,6 +743,8 @@ function weightView() {
             text: t('weight_add'), onClick: openWeightSheet })
         ),
 
+        projectionCard(data.projection),
+
         el(
           'div',
           { class: 'card' },
@@ -791,6 +793,25 @@ function summaryItem(value, label) {
   return el('div', { class: 'summary-item' },
     el('div', { class: 'summary-item__value', text: value }),
     el('div', { class: 'summary-item__label', text: label })
+  );
+}
+
+// projectionCard shows the low-pressure forecast: current BMI, the next weight
+// checkpoint and how long the (deliberately cautious) estimates say it takes.
+function projectionCard(proj) {
+  if (!proj) return null;
+  const weeks = (n) => t('proj_weeks_value', { n: num(n) });
+  const grid = el('div', { class: 'summary-grid' },
+    summaryItem(num(proj.current_bmi, 1), `${t('bmi_label')} · ${t('bmi_' + (proj.bmi_category || 'unknown'))}`),
+    summaryItem(`${num(proj.next_milestone_kg, 1)} ${t('kg')}`, t('proj_next_goal')),
+    proj.moving ? summaryItem(weeks(proj.weeks_to_next_milestone), t('proj_weeks_next')) : null,
+    proj.moving ? summaryItem(weeks(proj.weeks_to_goal), t('proj_weeks_goal')) : null
+  );
+  return el('div', { class: 'card' },
+    el('div', { class: 'card__head' }, el('h2', { class: 'card__title', text: t('progress_title') })),
+    grid,
+    el('p', { class: 'muted small', style: 'margin-top:10px',
+      text: proj.moving ? t('proj_note') : t('proj_at_goal') })
   );
 }
 
@@ -953,6 +974,7 @@ function planMeal(container, entry, data) {
       el('div', { class: 'meal__meta',
         text: [`${num(entry.kcal)} ${t('kcal')}`,
                t('plan_portions', { n: num(entry.portions, 2) }),
+               entry.portion_g ? t('plan_amount_g', { n: num(entry.portions * entry.portion_g) }) : null,
                entry.leftover ? t('plan_leftover') : null].filter(Boolean).join(' · ') }),
       data.saved && entry.id
         ? el('div', { class: 'meal__actions' },
@@ -1057,8 +1079,8 @@ async function openRecipe(id) {
         el('p', { class: 'muted', text: r.description }),
         el('div', { class: 'recipe__meta' },
           el('span', { text: `🔥 ${num(r.kcal)} ${t('kcal')} ${t('recipe_per_serving')}` }),
-          el('span', { text: `⏱ ${t('recipe_time', { n: r.prep_minutes })}` }),
-          el('span', { text: `🍽 ${data.servings} ${t('recipe_servings')}` })
+          r.portion_g ? el('span', { text: `🍽 ${t('recipe_portion_g', { n: num(r.portion_g) })}` }) : null,
+          el('span', { text: `⏱ ${t('recipe_time', { n: r.prep_minutes })}` })
         ),
         el('div', { style: 'margin-bottom:12px' },
           (r.tags || []).map((tag) => el('span', { class: 'tag', text: tag }))),
@@ -1067,7 +1089,7 @@ async function openRecipe(id) {
             text: `${t('protein')} ${num(r.protein_g)} g · ${t('carbs')} ${num(r.carbs_g)} g · ${t('fat')} ${num(r.fat_g)} g` })
         ),
 
-        el('h3', { text: t('recipe_ingredients') }),
+        el('h3', { text: t('recipe_ingredients_for', { n: data.servings }) }),
         el('ul', { class: 'list' }, (data.scaled_ingredients || []).map((i) =>
           el('li', { class: 'item' },
             el('div', { class: 'item__body' }, el('div', { class: 'item__title', text: i.name })),
@@ -1314,6 +1336,7 @@ function prefsEditor(prefs, rerender) {
   return el(
     'div',
     {},
+    el('p', { class: 'field__hint', style: 'margin-bottom:12px', text: t('household_settings_hint') }),
     el('div', { class: 'field__label', text: t('field_fish') }),
     optionGroup('fish', [
       { value: 'breaded_only', label: t('fish_breaded_only'), hint: t('fish_breaded_only_hint') },
@@ -1343,14 +1366,8 @@ function prefsEditor(prefs, rerender) {
       el('input', { type: 'number', min: '10', max: '180', step: '5', value: prefs.max_cook_minutes,
         onInput: (e) => { prefs.max_cook_minutes = Number(e.target.value) || 45; } })),
 
-    el('label', { class: 'switch' },
-      el('input', { type: 'checkbox', checked: prefs.cook_once_eat_twice,
-        onChange: (e) => { prefs.cook_once_eat_twice = e.target.checked; } }),
-      el('span', {},
-        el('div', { style: 'font-weight:600;font-size:.9rem', text: t('field_cook_once') }),
-        el('div', { class: 'field__hint', text: t('field_cook_once_hint') })
-      )
-    )
+    // Cook once, eat twice is always on now, so it is stated rather than toggled.
+    el('p', { class: 'field__hint', style: 'margin-top:4px', text: t('field_cook_once_always') })
   );
 }
 

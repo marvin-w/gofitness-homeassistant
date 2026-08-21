@@ -161,11 +161,13 @@ func Compute(ctx context.Context, st *store.Store, userID string, prof store.Pro
 	if err != nil {
 		return s, err
 	}
-	cooked, err := st.CountCookedMeals(ctx, userID)
+	// The meal plan is shared by the whole household, so these two count the
+	// household plan rather than anything owned by this individual user.
+	cooked, err := st.CountCookedMeals(ctx)
 	if err != nil {
 		return s, err
 	}
-	planCount, err := st.CountPlans(ctx, userID)
+	planCount, err := st.CountPlans(ctx)
 	if err != nil {
 		return s, err
 	}

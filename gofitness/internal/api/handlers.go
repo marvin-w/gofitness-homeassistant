@@ -220,6 +220,12 @@ func (s *Server) handleSaveProfile(w http.ResponseWriter, r *http.Request, rc *r
 	if err := s.store.SaveProfile(ctx, prof); err != nil {
 		return err
 	}
+	// The meal-planning preferences are shared, so store them globally: whatever
+	// this person chose for fish, veg, household size and cook time now applies to
+	// the whole household's plan.
+	if err := s.store.SaveHouseholdPrefs(ctx, prof.Prefs); err != nil {
+		return err
+	}
 
 	// The setup wizard doubles as the first weigh-in, so the weight chart is
 	// never empty after onboarding.

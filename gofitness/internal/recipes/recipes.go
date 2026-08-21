@@ -43,6 +43,10 @@ type Recipe struct {
 	ProteinG    float64 `json:"protein_g"`
 	CarbsG      float64 `json:"carbs_g"`
 	FatG        float64 `json:"fat_g"`
+	// PortionG is the approximate weight of one finished portion, in grams. It
+	// answers "what is one portion" concretely, since a serving count alone is
+	// ambiguous. Derived from the ingredient weights in tools/nutrition.
+	PortionG float64 `json:"portion_g"`
 
 	MealTypes []string `json:"meal_types"` // breakfast, lunch, dinner, snack
 	Tags      []string `json:"tags"`

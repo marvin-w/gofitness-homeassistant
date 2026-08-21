@@ -43,17 +43,6 @@
       "Finish with honey, oats and chopped almonds."
     ]
   },
-  "protein-pancakes": {
-    "title": "Protein pancakes with quark and apple sauce",
-    "description": "Tastes like a Sunday but fits into any weekday.",
-    "search": "protein pancakes quark",
-    "steps": [
-      "Blitz the oats into flour, or use instant oats.",
-      "Whisk the quark, eggs, oats and baking powder into a smooth batter.",
-      "Fry small pancakes in a little oil over medium heat until golden.",
-      "Serve with apple sauce."
-    ]
-  },
   "griessbrei-beeren": {
     "title": "Semolina pudding with berries",
     "description": "Childhood food that is grown-up enough for a calorie target.",
@@ -407,19 +396,25 @@
     "title": "Skyr with berries",
     "description": "The default snack: lots of protein, barely any calories.",
     "search": "skyr berries snack",
-    "steps": ["Let the berries thaw and stir them into the skyr."]
+    "steps": [
+      "Let the berries thaw and stir them into the skyr."
+    ]
   },
   "apfel-erdnussmus": {
     "title": "Apple with peanut butter",
     "description": "Sweet, salty, crunchy — gets you through the afternoon.",
     "search": "apple peanut butter snack",
-    "steps": ["Cut the apple into wedges and dip them into the peanut butter."]
+    "steps": [
+      "Cut the apple into wedges and dip them into the peanut butter."
+    ]
   },
   "huettenkaese-brot": {
     "title": "Cottage cheese on wholemeal bread",
     "description": "A savoury snack that fills you up without sitting heavy.",
     "search": "cottage cheese wholemeal bread",
-    "steps": ["Spread the bread with cottage cheese, season with salt and pepper and scatter over the chives."]
+    "steps": [
+      "Spread the bread with cottage cheese, season with salt and pepper and scatter over the chives."
+    ]
   },
   "protein-shake-banane": {
     "title": "Banana protein shake",
@@ -434,13 +429,17 @@
     "title": "Low-fat quark with honey and cinnamon",
     "description": "For the evening on the sofa — tastes like dessert, counts as protein.",
     "search": "quark honey cinnamon",
-    "steps": ["Stir the quark with a little water until creamy and fold in the honey and cinnamon."]
+    "steps": [
+      "Stir the quark with a little water until creamy and fold in the honey and cinnamon."
+    ]
   },
   "reiswaffeln-frischkaese": {
     "title": "Rice cakes with cream cheese and ham",
     "description": "Crunchy, barely any crumbs, works anywhere.",
     "search": "rice cakes cream cheese ham",
-    "steps": ["Spread the rice cakes with cream cheese and top with the ham."]
+    "steps": [
+      "Spread the rice cakes with cream cheese and top with the ham."
+    ]
   },
   "bananenbrot-scheibe": {
     "title": "Banana bread",
@@ -457,6 +456,19 @@
     "title": "Nuts and dried fruit",
     "description": "A weighed portion — otherwise the snack quickly turns into a meal.",
     "search": "trail mix",
-    "steps": ["Weigh out 35 g into a small tin — do not eat straight from the bag."]
+    "steps": [
+      "Weigh out 35 g into a small tin — do not eat straight from the bag."
+    ]
+  },
+  "bananen-pancakes": {
+    "title": "Fluffy banana pancakes",
+    "description": "Just banana, flour and milk — fluffy, sweet and egg-free. A breakfast that tastes like the weekend.",
+    "search": "fluffy banana pancakes",
+    "steps": [
+      "Peel the bananas and mash them as smoothly as you can with a fork.",
+      "Add the milk. Mix the flour with the baking powder and cinnamon, stir it in with a whisk to a thick batter and let it rest for 5 minutes.",
+      "Heat a little butter in a non-stick pan. Add about 1 heaped tablespoon of batter per pancake and fry over medium heat for 1–2 minutes per side until golden.",
+      "Stack the pancakes and serve with maple syrup."
+    ]
   }
 }

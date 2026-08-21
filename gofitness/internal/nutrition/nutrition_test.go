@@ -323,3 +323,36 @@ func hasNote(p Plan, code string) bool {
 	}
 	return false
 }
+
+func TestProjectionIsPessimistic(t *testing.T) {
+	// Losing: start 90, now 84, goal 75, height 175. At -0.5 kg/week the honest
+	// time to the goal is 18 weeks; the pessimistic estimate must exceed it.
+	pr := Project(90, 84, 75, 175, -0.5)
+	if !pr.Moving {
+		t.Fatal("expected Moving=true with a real weekly change")
+	}
+	honest := int(math.Ceil((84 - 75) / 0.5))
+	if pr.WeeksToGoal <= honest {
+		t.Errorf("weeks-to-goal %d should exceed the honest %d (pessimism)", pr.WeeksToGoal, honest)
+	}
+	// The next milestone is nearer than the goal, so it must not take longer.
+	if pr.WeeksToNextMilestone > pr.WeeksToGoal {
+		t.Errorf("next milestone %d further than goal %d", pr.WeeksToNextMilestone, pr.WeeksToGoal)
+	}
+	if pr.NextMilestoneKg <= 75 || pr.NextMilestoneKg >= 84 {
+		t.Errorf("next milestone %.1f should lie between current and goal", pr.NextMilestoneKg)
+	}
+	if pr.CurrentBMI < 27 || pr.CurrentBMI > 28 {
+		t.Errorf("current BMI %.1f off (expected ~27.4)", pr.CurrentBMI)
+	}
+}
+
+func TestProjectionAtMaintenanceDoesNotForecast(t *testing.T) {
+	pr := Project(75, 75, 75, 175, 0)
+	if pr.Moving {
+		t.Error("no weekly change should mean Moving=false")
+	}
+	if pr.WeeksToGoal != 0 || pr.WeeksToNextMilestone != 0 {
+		t.Errorf("expected zero weeks at maintenance, got goal=%d next=%d", pr.WeeksToGoal, pr.WeeksToNextMilestone)
+	}
+}

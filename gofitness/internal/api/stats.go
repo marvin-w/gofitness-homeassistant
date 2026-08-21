@@ -59,9 +59,20 @@ func (s *Server) handleStats(w http.ResponseWriter, r *http.Request, rc *reqCtx)
 		"weight_trend":  trend,
 		"daily_totals":  totals,
 		"plan":          plan,
+		"projection":    s.projection(ctx, rc.User, plan),
 		"healthy_range": []float64{plan.HealthyLowKg, plan.HealthyHighKg},
 	})
 	return nil
+}
+
+// projection builds the low-pressure forecast (current BMI, weeks to the next
+// milestone and to the goal) for the profile's latest weight.
+func (s *Server) projection(ctx context.Context, prof store.Profile, plan nutrition.Plan) nutrition.Projection {
+	current := prof.StartWeightKg
+	if wgt, err := s.store.LatestWeight(ctx, prof.UserID); err == nil {
+		current = wgt.WeightKg
+	}
+	return nutrition.Project(prof.StartWeightKg, current, plan.TargetWeightKg, prof.HeightCm, plan.WeeklyChangeKg)
 }
 
 // movingAverage smooths the weight series. Day-to-day weight swings are mostly
@@ -105,7 +116,11 @@ func (s *Server) handleGamify(w http.ResponseWriter, r *http.Request, rc *reqCtx
 	if err != nil {
 		return err
 	}
-	writeJSON(w, http.StatusOK, map[string]any{"gamify": stats, "plan": plan})
+	writeJSON(w, http.StatusOK, map[string]any{
+		"gamify":     stats,
+		"plan":       plan,
+		"projection": s.projection(ctx, rc.User, plan),
+	})
 	return nil
 }
 

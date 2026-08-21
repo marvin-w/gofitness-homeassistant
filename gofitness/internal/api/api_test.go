@@ -491,18 +491,25 @@ func TestPlanRequiresSetup(t *testing.T) {
 	}
 }
 
-func TestCrossUserPlanAccessIsRejected(t *testing.T) {
+func TestPlanIsSharedAcrossUsers(t *testing.T) {
 	s := newTestServer(t)
 	setup(t, s, "alice")
 	setup(t, s, "bob")
 
+	// Alice generates the household plan; bob sees the very same one.
 	saved := decode(t, do(t, s, http.MethodPost, "/api/plan/generate", "alice", map[string]any{}))
 	itemID := int64(saved["shopping"].([]any)[0].(map[string]any)["id"].(float64))
 
+	bobsPlan := decode(t, do(t, s, http.MethodGet, "/api/plan", "bob", nil))
+	if saved["week_start"] != bobsPlan["week_start"] || bobsPlan["saved"] != true {
+		t.Fatalf("bob does not see alice's saved plan: saved=%v", bobsPlan["saved"])
+	}
+
+	// Bob can tick the shared shopping list — it belongs to the household.
 	rec := do(t, s, http.MethodPost, "/api/shopping/"+itoa(itemID)+"/check", "bob",
 		map[string]any{"checked": true})
-	if rec.Code != http.StatusNotFound {
-		t.Errorf("bob ticking alice's item returned %d, want 404", rec.Code)
+	if rec.Code != http.StatusOK {
+		t.Errorf("bob ticking the shared item returned %d, want 200", rec.Code)
 	}
 }
 

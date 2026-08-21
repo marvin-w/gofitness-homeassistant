@@ -21,7 +21,9 @@ up. If you only want to install and use the add-on, read the top-level
    one food description or photo they submit.
 3. **Pure Go, no CGO.** The SQLite driver is [`modernc.org/sqlite`](https://pkg.go.dev/modernc.org/sqlite),
    a cgo-free translation of SQLite, so `CGO_ENABLED=0` cross-compiles cleanly
-   for every Home Assistant architecture (aarch64, amd64, armhf, armv7, i386).
+   for the supported Home Assistant architectures (aarch64, amd64). The 32-bit
+   arches (armhf, armv7, i386) were dropped when Home Assistant deprecated them
+   in 2025.12.
 4. **One binary.** The frontend is embedded with `go:embed`, so the add-on ships
    as a single static binary plus a thin `run.sh`.
 5. **Home Assistant native.** Authentication, per-user profiles and sensor
@@ -184,6 +186,26 @@ is first crossed.
 
 Rate of change is derived from the energy gap at **7700 kcal per kg of body fat**.
 
+### Projection (deliberately pessimistic)
+
+`Project()` turns the current weight, the goal and the expected weekly change
+into a low-pressure forecast: the current BMI, the next ~2 kg checkpoint, and how
+many weeks the checkpoint and the goal are away. Every week count is padded by a
+`pessimismFactor` (1.4) because real weight change is slower than the calorie
+maths — water, plateaus, the odd birthday cake. Under-promising and beating the
+estimate is the point; an optimistic number that gets missed creates exactly the
+pressure this app avoids. It is surfaced on the Weight screen.
+
+### Where the recipe numbers come from
+
+The per-portion kcal and macros in the recipe database are **not hand-entered** —
+they are computed from a single documented ingredient table by
+[`tools/nutrition/`](gofitness/tools/nutrition/) (`reference.py` +
+`generate.py`) and written back into `recipes.json`. This keeps the numbers
+internally consistent and makes every assumption visible: where a product varies
+a lot (fresh tortellini, cream cheese) the table says which product was assumed.
+Re-run `python3 gofitness/tools/nutrition/generate.py` after editing a recipe.
+
 ---
 
 ## 5. Recipes and meal planning
@@ -214,15 +236,34 @@ Recipes live in [`internal/recipes/data/`](gofitness/internal/recipes/data/):
 
 [`internal/mealplan/`](gofitness/internal/mealplan/) builds a week for the
 household: it picks recipes that pass the filter, respects meals-per-day and cook
-time, and implements **cook once, eat twice** — a cooked portion reappears as a
-leftover entry on a later day. It then **aggregates the shopping list**: every
-recipe ingredient is scaled by `portions × household_size` and summed, keyed on
-the **German** ingredient name so switching UI language never splits a line into
-two. Small pantry amounts are floored at 0.1 so they never round to "0 TL Salz".
+time, and always applies **cook once, eat twice** — a cooked portion reappears as
+a leftover entry on a later day. It then **aggregates the shopping list**: every
+recipe ingredient is scaled by the entry's portion count and summed, keyed on the
+**German** ingredient name so switching UI language never splits a line into two.
+Small pantry amounts are floored at 0.1 so they never round to "0 TL Salz".
 
-> The shopping list scales by portions × household size, which assumes everyone
-> eats a similar portion. It is a shopping approximation, not a per-person
-> nutrition calculation — this is documented in the code.
+Each recipe also carries a `portion_g` — the approximate weight of one finished
+portion — so the app can answer "what is one portion" concretely (a serving
+*count* alone is ambiguous), and the plan can say roughly how much to cook.
+
+### One shared plan for the whole household
+
+The meal plan is **shared**: there is a single plan per week for the whole home,
+stored under a fixed `store.HouseholdID` pseudo-user, and every Home Assistant
+user sees, cooks from and ticks off the same one. The plan is sized to the
+**combined** daily calorie target of everyone who has finished setup (so there is
+enough cooked for each person to eat to their own need) and is made
+lactation-safe if *anyone* in the house is breastfeeding. Portion counts already
+cover the household, so the shopping list scales by the portion count directly.
+
+The **meal-planning preferences are global** (fish policy, veg level, household
+size, meals per day, cook time, exclusions), stored in `app_settings` under
+`household_prefs` and overlaid onto every request's profile in `wrap()`. Personal
+health data — weight, age, height, goal, breastfeeding — and the interface
+language stay per-user.
+
+> The shopping list is still a shopping approximation, not a per-person nutrition
+> calculation — this is documented in the code.
 
 ### Why recipe links are search links
 
@@ -389,8 +430,11 @@ tracking data (it stores only which badges are unlocked, in `achievements`):
    [`recipes.en.json`](gofitness/internal/recipes/data/recipes.en.json).
 3. If you introduced a new ingredient/unit/tag word, add it to
    [`i18n.json`](gofitness/internal/recipes/data/i18n.json) so it translates in
-   the shopping list.
-4. `go test ./internal/recipes/...` checks the data loads and is translatable
+   the shopping list, and add the ingredient's per-100 g nutrition to
+   [`tools/nutrition/reference.py`](gofitness/tools/nutrition/reference.py).
+4. Run `python3 gofitness/tools/nutrition/generate.py` to recompute the
+   per-portion kcal, macros and `portion_g`. Do **not** hand-edit those numbers.
+5. `go test ./internal/recipes/...` checks the data loads and is translatable
    (`Book.MissingTranslations()` is also logged at startup).
 
 ### Add a translation string

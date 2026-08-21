@@ -40,6 +40,10 @@ func Open(ctx context.Context, path string) (*Store, error) {
 		db.Close()
 		return nil, fmt.Errorf("migrate: %w", err)
 	}
+	if err := s.ensureHousehold(ctx); err != nil {
+		db.Close()
+		return nil, fmt.Errorf("ensure household: %w", err)
+	}
 	return s, nil
 }
 

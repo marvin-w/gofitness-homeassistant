@@ -6,12 +6,19 @@
     "search": "overnight oats skyr beeren",
     "servings": 2,
     "prep_minutes": 10,
-    "kcal": 420,
-    "protein_g": 28,
-    "carbs_g": 52,
-    "fat_g": 9,
-    "meal_types": ["breakfast"],
-    "tags": ["schnell", "vorbereiten", "süß", "proteinreich"],
+    "kcal": 384,
+    "protein_g": 26,
+    "carbs_g": 53,
+    "fat_g": 5,
+    "meal_types": [
+      "breakfast"
+    ],
+    "tags": [
+      "schnell",
+      "vorbereiten",
+      "süß",
+      "proteinreich"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -20,19 +27,51 @@
     "meal_prep": true,
     "freezable": false,
     "ingredients": [
-      {"name": "Haferflocken", "amount": 100, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Skyr natur", "amount": 300, "unit": "g", "category": "Kühlregal"},
-      {"name": "Milch", "amount": 150, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Beeren (TK-Mischung)", "amount": 150, "unit": "g", "category": "Tiefkühl"},
-      {"name": "Honig", "amount": 20, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Zimt", "amount": 1, "unit": "Prise", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Haferflocken",
+        "amount": 100,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Skyr natur",
+        "amount": 300,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Milch",
+        "amount": 150,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Beeren (TK-Mischung)",
+        "amount": 150,
+        "unit": "g",
+        "category": "Tiefkühl"
+      },
+      {
+        "name": "Honig",
+        "amount": 20,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Zimt",
+        "amount": 1,
+        "unit": "Prise",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Haferflocken, Skyr und Milch in zwei Gläsern verrühren.",
       "Honig und Zimt unterrühren.",
       "Beeren obendrauf geben, zudecken und über Nacht in den Kühlschrank stellen.",
       "Am Morgen kurz durchrühren – fertig."
-    ]
+    ],
+    "portion_g": 360
   },
   {
     "id": "ruehrei-vollkorntoast",
@@ -41,12 +80,18 @@
     "search": "rührei vollkorntoast schinken",
     "servings": 2,
     "prep_minutes": 12,
-    "kcal": 430,
-    "protein_g": 32,
-    "carbs_g": 33,
-    "fat_g": 19,
-    "meal_types": ["breakfast"],
-    "tags": ["schnell", "herzhaft", "proteinreich"],
+    "kcal": 463,
+    "protein_g": 31,
+    "carbs_g": 32,
+    "fat_g": 22,
+    "meal_types": [
+      "breakfast"
+    ],
+    "tags": [
+      "schnell",
+      "herzhaft",
+      "proteinreich"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -55,13 +100,49 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Eier", "amount": 5, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Vollkorntoast", "amount": 4, "unit": "Scheiben", "category": "Trockenwaren"},
-      {"name": "Kochschinken", "amount": 80, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Milch", "amount": 40, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Butter", "amount": 10, "unit": "g", "category": "Kühlregal"},
-      {"name": "Schnittlauch", "amount": 5, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Salz und Pfeffer", "amount": 1, "unit": "Prise", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Eier",
+        "amount": 5,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Vollkorntoast",
+        "amount": 4,
+        "unit": "Scheiben",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Kochschinken",
+        "amount": 80,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Milch",
+        "amount": 40,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Butter",
+        "amount": 10,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Schnittlauch",
+        "amount": 5,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Salz und Pfeffer",
+        "amount": 1,
+        "unit": "Prise",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Eier mit Milch, Salz und Pfeffer verquirlen.",
@@ -69,7 +150,8 @@
       "Eiermasse dazugeben und bei mittlerer Hitze langsam stocken lassen, dabei rühren.",
       "Toast toasten, Rührei daraufgeben und mit Schnittlauch bestreuen.",
       "Eier gut durchgaren – so ist das Frühstück auch in der Stillzeit sicher."
-    ]
+    ],
+    "portion_g": 280
   },
   {
     "id": "porridge-apfel-zimt",
@@ -78,12 +160,18 @@
     "search": "porridge apfel zimt",
     "servings": 2,
     "prep_minutes": 12,
-    "kcal": 400,
-    "protein_g": 14,
-    "carbs_g": 60,
-    "fat_g": 11,
-    "meal_types": ["breakfast"],
-    "tags": ["warm", "süß", "günstig"],
+    "kcal": 445,
+    "protein_g": 15,
+    "carbs_g": 66,
+    "fat_g": 13,
+    "meal_types": [
+      "breakfast"
+    ],
+    "tags": [
+      "warm",
+      "süß",
+      "günstig"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -92,19 +180,51 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Haferflocken", "amount": 100, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Milch", "amount": 400, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Apfel", "amount": 2, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Walnüsse", "amount": 20, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Honig", "amount": 15, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Zimt", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Haferflocken",
+        "amount": 100,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Milch",
+        "amount": 400,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Apfel",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Walnüsse",
+        "amount": 20,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Honig",
+        "amount": 15,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Zimt",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Haferflocken mit Milch aufkochen und 5 Minuten bei kleiner Hitze köcheln lassen.",
       "Apfel würfeln und in den letzten 3 Minuten mitkochen.",
       "Mit Zimt und Honig abschmecken.",
       "Mit gehackten Walnüssen bestreut servieren."
-    ]
+    ],
+    "portion_g": 410
   },
   {
     "id": "skyr-bowl-banane",
@@ -113,12 +233,20 @@
     "search": "skyr bowl banane honig",
     "servings": 2,
     "prep_minutes": 5,
-    "kcal": 380,
-    "protein_g": 30,
-    "carbs_g": 42,
-    "fat_g": 9,
-    "meal_types": ["breakfast", "snack"],
-    "tags": ["schnell", "ohne kochen", "proteinreich", "süß"],
+    "kcal": 382,
+    "protein_g": 27,
+    "carbs_g": 53,
+    "fat_g": 7,
+    "meal_types": [
+      "breakfast",
+      "snack"
+    ],
+    "tags": [
+      "schnell",
+      "ohne kochen",
+      "proteinreich",
+      "süß"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -127,31 +255,64 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Skyr natur", "amount": 400, "unit": "g", "category": "Kühlregal"},
-      {"name": "Banane", "amount": 2, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Honig", "amount": 20, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Haferflocken", "amount": 30, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Mandeln", "amount": 20, "unit": "g", "category": "Trockenwaren"}
+      {
+        "name": "Skyr natur",
+        "amount": 400,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Banane",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Honig",
+        "amount": 20,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Haferflocken",
+        "amount": 30,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Mandeln",
+        "amount": 20,
+        "unit": "g",
+        "category": "Trockenwaren"
+      }
     ],
     "steps": [
       "Skyr in zwei Schalen füllen.",
       "Banane in Scheiben schneiden und darauf verteilen.",
       "Mit Honig, Haferflocken und gehackten Mandeln toppen."
-    ]
+    ],
+    "portion_g": 360
   },
   {
-    "id": "protein-pancakes",
-    "title": "Protein-Pancakes mit Quark und Apfelmus",
-    "description": "Schmecken nach Sonntag, passen aber in jeden Wochentag.",
-    "search": "protein pancakes quark",
+    "id": "bananen-pancakes",
+    "title": "Fluffige Bananen-Pancakes",
+    "description": "Nur Banane, Mehl und Milch – fluffig, süß und ohne Ei. Ein Frühstück, das nach Wochenende schmeckt.",
+    "search": "fluffige bananen pancakes",
     "servings": 2,
     "prep_minutes": 20,
-    "kcal": 450,
-    "protein_g": 35,
-    "carbs_g": 48,
-    "fat_g": 11,
-    "meal_types": ["breakfast"],
-    "tags": ["süß", "proteinreich", "familienessen"],
+    "kcal": 507,
+    "protein_g": 11,
+    "carbs_g": 98,
+    "fat_g": 8,
+    "portion_g": 300,
+    "meal_types": [
+      "breakfast"
+    ],
+    "tags": [
+      "süß",
+      "familienessen",
+      "günstig"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -160,18 +321,57 @@
     "meal_prep": false,
     "freezable": true,
     "ingredients": [
-      {"name": "Magerquark", "amount": 250, "unit": "g", "category": "Kühlregal"},
-      {"name": "Eier", "amount": 3, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Haferflocken", "amount": 80, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Backpulver", "amount": 0.5, "unit": "TL", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Apfelmus", "amount": 150, "unit": "g", "category": "Konserven"},
-      {"name": "Rapsöl", "amount": 10, "unit": "ml", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Banane",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Weizenmehl",
+        "amount": 150,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Milch",
+        "amount": 150,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Backpulver",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Ahornsirup",
+        "amount": 40,
+        "unit": "g",
+        "category": "Backen & Gewürze"
+      },
+      {
+        "name": "Butter",
+        "amount": 15,
+        "unit": "g",
+        "category": "Kühlregal",
+        "pantry": true
+      },
+      {
+        "name": "Zimt",
+        "amount": 1,
+        "unit": "Prise",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
-      "Haferflocken fein mahlen oder Instant-Flocken nehmen.",
-      "Quark, Eier, Haferflocken und Backpulver zu einem glatten Teig verrühren.",
-      "In wenig Öl bei mittlerer Hitze kleine Pancakes goldbraun backen.",
-      "Mit Apfelmus servieren."
+      "Bananen schälen und mit einer Gabel möglichst fein zu Mus zerdrücken.",
+      "Milch dazugeben. Mehl mit Backpulver und Zimt mischen, zugeben und mit dem Schneebesen zügig zu einem dicklichen Teig rühren. 5 Minuten ruhen lassen.",
+      "Etwas Butter in einer beschichteten Pfanne erhitzen. Pro Pancake ca. 1 gehäuften EL Teig hineingeben und bei mittlerer Hitze 1–2 Minuten je Seite goldbraun backen.",
+      "Pancakes stapeln und mit Ahornsirup servieren."
     ]
   },
   {
@@ -181,12 +381,20 @@
     "search": "grießbrei beeren",
     "servings": 2,
     "prep_minutes": 12,
-    "kcal": 390,
-    "protein_g": 16,
+    "kcal": 355,
+    "protein_g": 14,
     "carbs_g": 60,
-    "fat_g": 9,
-    "meal_types": ["breakfast", "snack"],
-    "tags": ["süß", "warm", "günstig", "familienessen"],
+    "fat_g": 4.4,
+    "meal_types": [
+      "breakfast",
+      "snack"
+    ],
+    "tags": [
+      "süß",
+      "warm",
+      "günstig",
+      "familienessen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -195,17 +403,45 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Weichweizengrieß", "amount": 80, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Milch", "amount": 500, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Beeren (TK-Mischung)", "amount": 150, "unit": "g", "category": "Tiefkühl"},
-      {"name": "Zucker", "amount": 20, "unit": "g", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Vanillezucker", "amount": 1, "unit": "Päckchen", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Weichweizengrieß",
+        "amount": 80,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Milch",
+        "amount": 500,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Beeren (TK-Mischung)",
+        "amount": 150,
+        "unit": "g",
+        "category": "Tiefkühl"
+      },
+      {
+        "name": "Zucker",
+        "amount": 20,
+        "unit": "g",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Vanillezucker",
+        "amount": 1,
+        "unit": "Päckchen",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Milch mit Zucker und Vanillezucker aufkochen.",
       "Grieß unter Rühren einrieseln lassen und 2 Minuten quellen lassen.",
       "Beeren kurz erwärmen und auf den Brei geben."
-    ]
+    ],
+    "portion_g": 380
   },
   {
     "id": "quark-broetchen",
@@ -214,12 +450,19 @@
     "search": "quarkbrötchen ohne hefe",
     "servings": 6,
     "prep_minutes": 35,
-    "kcal": 340,
-    "protein_g": 22,
+    "kcal": 306,
+    "protein_g": 19,
     "carbs_g": 38,
-    "fat_g": 10,
-    "meal_types": ["breakfast", "snack"],
-    "tags": ["vorbereiten", "backen", "herzhaft"],
+    "fat_g": 8,
+    "meal_types": [
+      "breakfast",
+      "snack"
+    ],
+    "tags": [
+      "vorbereiten",
+      "backen",
+      "herzhaft"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -228,13 +471,50 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Magerquark", "amount": 250, "unit": "g", "category": "Kühlregal"},
-      {"name": "Weizenmehl", "amount": 300, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Eier", "amount": 2, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Backpulver", "amount": 1, "unit": "Päckchen", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Gouda gerieben", "amount": 100, "unit": "g", "category": "Kühlregal"},
-      {"name": "Kochschinken", "amount": 100, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Salz", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Magerquark",
+        "amount": 250,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Weizenmehl",
+        "amount": 300,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Eier",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Backpulver",
+        "amount": 1,
+        "unit": "Päckchen",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Gouda gerieben",
+        "amount": 100,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Kochschinken",
+        "amount": 100,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Salz",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Ofen auf 200 °C Ober-/Unterhitze vorheizen.",
@@ -242,7 +522,8 @@
       "Käse und gewürfelten Schinken unterkneten.",
       "Sechs Brötchen formen und 25 Minuten backen.",
       "Auskühlen lassen – halten drei Tage in einer Dose, eingefroren deutlich länger."
-    ]
+    ],
+    "portion_g": 150
   },
   {
     "id": "haehnchen-reispfanne",
@@ -251,12 +532,19 @@
     "search": "hähnchen reispfanne erbsen mais",
     "servings": 4,
     "prep_minutes": 30,
-    "kcal": 560,
-    "protein_g": 45,
-    "carbs_g": 62,
-    "fat_g": 13,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["one pot", "vorbereiten", "proteinreich"],
+    "kcal": 558,
+    "protein_g": 44,
+    "carbs_g": 73,
+    "fat_g": 9,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "one pot",
+      "vorbereiten",
+      "proteinreich"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -265,14 +553,56 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Hähnchenbrustfilet", "amount": 600, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Reis", "amount": 300, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Erbsen (TK)", "amount": 200, "unit": "g", "category": "Tiefkühl"},
-      {"name": "Mais (Dose)", "amount": 150, "unit": "g", "category": "Konserven"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Gemüsebrühe", "amount": 600, "unit": "ml", "category": "Trockenwaren"},
-      {"name": "Paprikapulver edelsüß", "amount": 2, "unit": "TL", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Rapsöl", "amount": 20, "unit": "ml", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Hähnchenbrustfilet",
+        "amount": 600,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Reis",
+        "amount": 300,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Erbsen (TK)",
+        "amount": 200,
+        "unit": "g",
+        "category": "Tiefkühl"
+      },
+      {
+        "name": "Mais (Dose)",
+        "amount": 150,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Gemüsebrühe",
+        "amount": 600,
+        "unit": "ml",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Paprikapulver edelsüß",
+        "amount": 2,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Rapsöl",
+        "amount": 20,
+        "unit": "ml",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Hähnchen in Streifen schneiden, salzen und in Öl scharf anbraten, herausnehmen.",
@@ -280,7 +610,8 @@
       "Mit Brühe ablöschen und zugedeckt 15 Minuten köcheln lassen.",
       "Erbsen und Mais in den letzten 5 Minuten dazugeben.",
       "Hähnchen wieder unterheben, mit Paprikapulver, Salz und Pfeffer abschmecken."
-    ]
+    ],
+    "portion_g": 610
   },
   {
     "id": "fischstaebchen-kartoffelpueree",
@@ -289,12 +620,19 @@
     "search": "fischstäbchen kartoffelpüree erbsen",
     "servings": 4,
     "prep_minutes": 30,
-    "kcal": 590,
-    "protein_g": 32,
-    "carbs_g": 65,
-    "fat_g": 22,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["schnell", "familienessen", "klassiker"],
+    "kcal": 560,
+    "protein_g": 24,
+    "carbs_g": 71,
+    "fat_g": 18,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "schnell",
+      "familienessen",
+      "klassiker"
+    ],
     "veggie_level": "low",
     "contains_fish": true,
     "fish_breaded": true,
@@ -303,13 +641,49 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Fischstäbchen (TK)", "amount": 16, "unit": "Stück", "category": "Tiefkühl"},
-      {"name": "Kartoffeln mehligkochend", "amount": 1000, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Milch", "amount": 200, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Butter", "amount": 30, "unit": "g", "category": "Kühlregal"},
-      {"name": "Erbsen (TK)", "amount": 300, "unit": "g", "category": "Tiefkühl"},
-      {"name": "Zitrone", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Muskatnuss", "amount": 1, "unit": "Prise", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Fischstäbchen (TK)",
+        "amount": 16,
+        "unit": "Stück",
+        "category": "Tiefkühl"
+      },
+      {
+        "name": "Kartoffeln mehligkochend",
+        "amount": 1000,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Milch",
+        "amount": 200,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Butter",
+        "amount": 30,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Erbsen (TK)",
+        "amount": 300,
+        "unit": "g",
+        "category": "Tiefkühl"
+      },
+      {
+        "name": "Zitrone",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Muskatnuss",
+        "amount": 1,
+        "unit": "Prise",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Kartoffeln schälen, in Salzwasser weich kochen und abgießen.",
@@ -317,7 +691,8 @@
       "Fischstäbchen nach Packungsangabe im Ofen backen, bis sie innen komplett durchgegart sind.",
       "Erbsen in wenig Wasser 4 Minuten garen.",
       "Mit einem Spritzer Zitrone servieren."
-    ]
+    ],
+    "portion_g": 520
   },
   {
     "id": "hackbaellchen-tomatensauce",
@@ -326,12 +701,19 @@
     "search": "hackbällchen tomatensoße nudeln",
     "servings": 4,
     "prep_minutes": 40,
-    "kcal": 620,
-    "protein_g": 42,
-    "carbs_g": 70,
-    "fat_g": 18,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["familienessen", "vorbereiten", "klassiker"],
+    "kcal": 846,
+    "protein_g": 48,
+    "carbs_g": 91,
+    "fat_g": 31,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "familienessen",
+      "vorbereiten",
+      "klassiker"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -340,15 +722,62 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Rinderhackfleisch", "amount": 600, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Nudeln", "amount": 400, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Passierte Tomaten", "amount": 700, "unit": "g", "category": "Konserven"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Knoblauchzehe", "amount": 2, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Ei", "amount": 1, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Semmelbrösel", "amount": 40, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Oregano", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Olivenöl", "amount": 20, "unit": "ml", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Rinderhackfleisch",
+        "amount": 600,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Nudeln",
+        "amount": 400,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Passierte Tomaten",
+        "amount": 700,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Knoblauchzehe",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Ei",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Semmelbrösel",
+        "amount": 40,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Oregano",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Olivenöl",
+        "amount": 20,
+        "unit": "ml",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Hack mit Ei, Semmelbröseln, der Hälfte der Zwiebel, Salz und Pfeffer verkneten.",
@@ -356,7 +785,8 @@
       "Restliche Zwiebel und Knoblauch andünsten, passierte Tomaten dazugeben.",
       "Bällchen in der Soße 20 Minuten leise köcheln lassen, bis sie komplett durch sind.",
       "Nudeln kochen und alles zusammen servieren."
-    ]
+    ],
+    "portion_g": 620
   },
   {
     "id": "ofenkartoffel-quark",
@@ -365,12 +795,19 @@
     "search": "ofenkartoffel kräuterquark hähnchen",
     "servings": 4,
     "prep_minutes": 55,
-    "kcal": 520,
-    "protein_g": 48,
-    "carbs_g": 52,
-    "fat_g": 11,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["ofen", "proteinreich", "günstig"],
+    "kcal": 501,
+    "protein_g": 56,
+    "carbs_g": 50,
+    "fat_g": 8,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "ofen",
+      "proteinreich",
+      "günstig"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -379,13 +816,50 @@
     "meal_prep": true,
     "freezable": false,
     "ingredients": [
-      {"name": "Kartoffeln festkochend", "amount": 1200, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Hähnchenbrustfilet", "amount": 600, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Magerquark", "amount": 500, "unit": "g", "category": "Kühlregal"},
-      {"name": "Schnittlauch", "amount": 15, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Mineralwasser", "amount": 50, "unit": "ml", "category": "Getränke"},
-      {"name": "Rapsöl", "amount": 20, "unit": "ml", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Paprikapulver edelsüß", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Kartoffeln festkochend",
+        "amount": 1200,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Hähnchenbrustfilet",
+        "amount": 600,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Magerquark",
+        "amount": 500,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Schnittlauch",
+        "amount": 15,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Mineralwasser",
+        "amount": 50,
+        "unit": "ml",
+        "category": "Getränke"
+      },
+      {
+        "name": "Rapsöl",
+        "amount": 20,
+        "unit": "ml",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Paprikapulver edelsüß",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Ofen auf 200 °C vorheizen. Kartoffeln waschen, halbieren, mit Öl und Salz mischen.",
@@ -393,7 +867,8 @@
       "Hähnchenbrust würzen und in den letzten 20 Minuten mitbacken (Kerntemperatur 75 °C).",
       "Quark mit Mineralwasser cremig rühren, Schnittlauch unterheben, salzen und pfeffern.",
       "Kartoffeln, Hähnchen und Kräuterquark zusammen servieren."
-    ]
+    ],
+    "portion_g": 600
   },
   {
     "id": "putengeschnetzeltes-reis",
@@ -402,12 +877,19 @@
     "search": "putengeschnetzeltes helle soße reis",
     "servings": 4,
     "prep_minutes": 30,
-    "kcal": 580,
+    "kcal": 610,
     "protein_g": 46,
-    "carbs_g": 60,
-    "fat_g": 16,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["schnell", "proteinreich", "klassiker"],
+    "carbs_g": 63,
+    "fat_g": 19,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "schnell",
+      "proteinreich",
+      "klassiker"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -416,13 +898,49 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Putenschnitzel", "amount": 600, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Reis", "amount": 300, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Frischkäse", "amount": 200, "unit": "g", "category": "Kühlregal"},
-      {"name": "Gemüsebrühe", "amount": 300, "unit": "ml", "category": "Trockenwaren"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Champignons", "amount": 200, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Rapsöl", "amount": 20, "unit": "ml", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Putenschnitzel",
+        "amount": 600,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Reis",
+        "amount": 300,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Frischkäse",
+        "amount": 200,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Gemüsebrühe",
+        "amount": 300,
+        "unit": "ml",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Champignons",
+        "amount": 200,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Rapsöl",
+        "amount": 20,
+        "unit": "ml",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Reis nach Packungsangabe kochen.",
@@ -430,7 +948,8 @@
       "Zwiebel und Champignons anbraten, mit Brühe ablöschen.",
       "Frischkäse einrühren, bis eine glatte Soße entsteht.",
       "Fleisch zurück in die Pfanne, kurz durchziehen lassen und mit Reis servieren."
-    ]
+    ],
+    "portion_g": 550
   },
   {
     "id": "kaesespaetzle-leicht",
@@ -439,12 +958,19 @@
     "search": "käsespätzle röstzwiebeln",
     "servings": 4,
     "prep_minutes": 35,
-    "kcal": 640,
-    "protein_g": 30,
-    "carbs_g": 68,
-    "fat_g": 27,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["vegetarisch", "seelenfutter", "familienessen"],
+    "kcal": 855,
+    "protein_g": 36,
+    "carbs_g": 99,
+    "fat_g": 33,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "vegetarisch",
+      "seelenfutter",
+      "familienessen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -453,12 +979,42 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Spätzle (frisch)", "amount": 800, "unit": "g", "category": "Kühlregal"},
-      {"name": "Bergkäse gerieben", "amount": 180, "unit": "g", "category": "Kühlregal"},
-      {"name": "Magerquark", "amount": 150, "unit": "g", "category": "Kühlregal"},
-      {"name": "Röstzwiebeln", "amount": 60, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Butter", "amount": 20, "unit": "g", "category": "Kühlregal"}
+      {
+        "name": "Spätzle (frisch)",
+        "amount": 800,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Bergkäse gerieben",
+        "amount": 180,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Magerquark",
+        "amount": 150,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Röstzwiebeln",
+        "amount": 60,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Butter",
+        "amount": 20,
+        "unit": "g",
+        "category": "Kühlregal"
+      }
     ],
     "steps": [
       "Spätzle in Salzwasser garen und abgießen, etwas Kochwasser aufheben.",
@@ -466,7 +1022,8 @@
       "Spätzle schichtweise mit Käse und Quark in einer Auflaufform verteilen.",
       "Bei 180 °C 10 Minuten überbacken, bis der Käse geschmolzen ist.",
       "Mit Röstzwiebeln und den gebratenen Zwiebeln servieren."
-    ]
+    ],
+    "portion_g": 330
   },
   {
     "id": "mildes-haehnchen-curry",
@@ -475,12 +1032,19 @@
     "search": "mildes hähnchen curry kokosmilch",
     "servings": 4,
     "prep_minutes": 30,
-    "kcal": 610,
-    "protein_g": 44,
-    "carbs_g": 68,
-    "fat_g": 18,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["one pot", "vorbereiten", "mild"],
+    "kcal": 582,
+    "protein_g": 41,
+    "carbs_g": 69,
+    "fat_g": 15,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "one pot",
+      "vorbereiten",
+      "mild"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -489,14 +1053,56 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Hähnchenbrustfilet", "amount": 600, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Reis", "amount": 300, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Kokosmilch light", "amount": 400, "unit": "ml", "category": "Konserven"},
-      {"name": "Currypulver mild", "amount": 2, "unit": "TL", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Ananas (Dose)", "amount": 150, "unit": "g", "category": "Konserven"},
-      {"name": "Hühnerbrühe", "amount": 200, "unit": "ml", "category": "Trockenwaren"},
-      {"name": "Rapsöl", "amount": 15, "unit": "ml", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Hähnchenbrustfilet",
+        "amount": 600,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Reis",
+        "amount": 300,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Kokosmilch light",
+        "amount": 400,
+        "unit": "ml",
+        "category": "Konserven"
+      },
+      {
+        "name": "Currypulver mild",
+        "amount": 2,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Ananas (Dose)",
+        "amount": 150,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Hühnerbrühe",
+        "amount": 200,
+        "unit": "ml",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Rapsöl",
+        "amount": 15,
+        "unit": "ml",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Reis kochen.",
@@ -504,7 +1110,8 @@
       "Currypulver kurz mitrösten, mit Brühe und Kokosmilch ablöschen.",
       "15 Minuten köcheln lassen, Ananasstücke zum Schluss unterheben.",
       "Mit Salz abschmecken und mit Reis servieren."
-    ]
+    ],
+    "portion_g": 560
   },
   {
     "id": "nudelauflauf-haehnchen",
@@ -513,12 +1120,19 @@
     "search": "nudelauflauf hähnchen käse",
     "servings": 6,
     "prep_minutes": 45,
-    "kcal": 630,
+    "kcal": 631,
     "protein_g": 45,
-    "carbs_g": 65,
+    "carbs_g": 67,
     "fat_g": 20,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["ofen", "vorbereiten", "familienessen"],
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "ofen",
+      "vorbereiten",
+      "familienessen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -527,13 +1141,49 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Nudeln", "amount": 500, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Hähnchenbrustfilet", "amount": 700, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Passierte Tomaten", "amount": 500, "unit": "g", "category": "Konserven"},
-      {"name": "Schmand", "amount": 200, "unit": "g", "category": "Kühlregal"},
-      {"name": "Gouda gerieben", "amount": 150, "unit": "g", "category": "Kühlregal"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Oregano", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Nudeln",
+        "amount": 500,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Hähnchenbrustfilet",
+        "amount": 700,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Passierte Tomaten",
+        "amount": 500,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Schmand",
+        "amount": 200,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Gouda gerieben",
+        "amount": 150,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Oregano",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Nudeln bissfest kochen.",
@@ -541,7 +1191,8 @@
       "Passierte Tomaten und Schmand verrühren, würzen.",
       "Nudeln, Hähnchen und Soße mischen, in eine große Auflaufform geben.",
       "Mit Käse bestreuen und bei 200 °C 20 Minuten überbacken."
-    ]
+    ],
+    "portion_g": 480
   },
   {
     "id": "frikadellen-kartoffelpueree",
@@ -550,12 +1201,19 @@
     "search": "frikadellen kartoffelpüree",
     "servings": 4,
     "prep_minutes": 40,
-    "kcal": 600,
-    "protein_g": 40,
-    "carbs_g": 55,
-    "fat_g": 24,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["klassiker", "familienessen", "vorbereiten"],
+    "kcal": 684,
+    "protein_g": 37,
+    "carbs_g": 50,
+    "fat_g": 37,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "klassiker",
+      "familienessen",
+      "vorbereiten"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -564,14 +1222,55 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Gemischtes Hackfleisch", "amount": 600, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Kartoffeln mehligkochend", "amount": 1000, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Brötchen vom Vortag", "amount": 1, "unit": "Stück", "category": "Trockenwaren"},
-      {"name": "Ei", "amount": 1, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Milch", "amount": 200, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Senf", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Butter", "amount": 20, "unit": "g", "category": "Kühlregal"}
+      {
+        "name": "Gemischtes Hackfleisch",
+        "amount": 600,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Kartoffeln mehligkochend",
+        "amount": 1000,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Brötchen vom Vortag",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Ei",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Milch",
+        "amount": 200,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Senf",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Butter",
+        "amount": 20,
+        "unit": "g",
+        "category": "Kühlregal"
+      }
     ],
     "steps": [
       "Brötchen in Wasser einweichen und ausdrücken.",
@@ -579,7 +1278,8 @@
       "Flache Frikadellen formen und bei 200 °C 25 Minuten backen, einmal wenden.",
       "Kartoffeln kochen, mit warmer Milch und Butter zu Püree stampfen.",
       "Frikadellen komplett durchgaren – innen darf nichts mehr rosa sein."
-    ]
+    ],
+    "portion_g": 510
   },
   {
     "id": "haehnchenschnitzel-ofenpommes",
@@ -588,12 +1288,19 @@
     "search": "hähnchenschnitzel ofen pommes",
     "servings": 4,
     "prep_minutes": 40,
-    "kcal": 650,
-    "protein_g": 48,
-    "carbs_g": 62,
-    "fat_g": 22,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["paniert", "familienessen", "ofen"],
+    "kcal": 638,
+    "protein_g": 54,
+    "carbs_g": 71,
+    "fat_g": 15,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "paniert",
+      "familienessen",
+      "ofen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -602,13 +1309,49 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Hähnchenbrustfilet", "amount": 700, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Kartoffeln festkochend", "amount": 1000, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Semmelbrösel", "amount": 120, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Eier", "amount": 2, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Weizenmehl", "amount": 60, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Rapsöl", "amount": 30, "unit": "ml", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Zitrone", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"}
+      {
+        "name": "Hähnchenbrustfilet",
+        "amount": 700,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Kartoffeln festkochend",
+        "amount": 1000,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Semmelbrösel",
+        "amount": 120,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Eier",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Weizenmehl",
+        "amount": 60,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Rapsöl",
+        "amount": 30,
+        "unit": "ml",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Zitrone",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      }
     ],
     "steps": [
       "Kartoffeln in Stifte schneiden, mit Öl und Salz mischen, bei 220 °C 30 Minuten backen.",
@@ -616,7 +1359,8 @@
       "Schnitzel auf ein zweites Blech legen, leicht mit Öl besprühen.",
       "In den letzten 20 Minuten mitbacken, nach der Hälfte wenden.",
       "Mit Zitronenspalten servieren."
-    ]
+    ],
+    "portion_g": 520
   },
   {
     "id": "gyros-auflauf",
@@ -625,12 +1369,19 @@
     "search": "gyros auflauf kartoffeln tzatziki",
     "servings": 4,
     "prep_minutes": 55,
-    "kcal": 640,
-    "protein_g": 44,
-    "carbs_g": 55,
-    "fat_g": 27,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["ofen", "familienessen", "vorbereiten"],
+    "kcal": 557,
+    "protein_g": 46,
+    "carbs_g": 43,
+    "fat_g": 22,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "ofen",
+      "familienessen",
+      "vorbereiten"
+    ],
     "veggie_level": "medium",
     "contains_fish": false,
     "fish_breaded": false,
@@ -639,14 +1390,54 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Schweinegeschnetzeltes", "amount": 600, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Kartoffeln festkochend", "amount": 900, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Gyrosgewürz", "amount": 2, "unit": "EL", "category": "Backen & Gewürze"},
-      {"name": "Naturjoghurt", "amount": 400, "unit": "g", "category": "Kühlregal"},
-      {"name": "Salatgurke", "amount": 0.5, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Knoblauchzehe", "amount": 2, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Gouda gerieben", "amount": 100, "unit": "g", "category": "Kühlregal"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"}
+      {
+        "name": "Schweinegeschnetzeltes",
+        "amount": 600,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Kartoffeln festkochend",
+        "amount": 900,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Gyrosgewürz",
+        "amount": 2,
+        "unit": "EL",
+        "category": "Backen & Gewürze"
+      },
+      {
+        "name": "Naturjoghurt",
+        "amount": 400,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Salatgurke",
+        "amount": 0.5,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Knoblauchzehe",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Gouda gerieben",
+        "amount": 100,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      }
     ],
     "steps": [
       "Fleisch mit Gyrosgewürz und Öl mischen, 20 Minuten ziehen lassen.",
@@ -654,7 +1445,8 @@
       "Fleisch scharf anbraten und auf die Kartoffeln geben.",
       "Bei 200 °C 35 Minuten backen, die letzten 10 Minuten mit Käse.",
       "Gurke raspeln, ausdrücken und mit Joghurt und Knoblauch zu Tzatziki rühren."
-    ]
+    ],
+    "portion_g": 580
   },
   {
     "id": "chili-con-carne-mild",
@@ -663,12 +1455,20 @@
     "search": "mildes chili con carne",
     "servings": 6,
     "prep_minutes": 45,
-    "kcal": 570,
-    "protein_g": 40,
-    "carbs_g": 62,
-    "fat_g": 16,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["one pot", "vorbereiten", "mild", "günstig"],
+    "kcal": 620,
+    "protein_g": 36,
+    "carbs_g": 72,
+    "fat_g": 19,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "one pot",
+      "vorbereiten",
+      "mild",
+      "günstig"
+    ],
     "veggie_level": "medium",
     "contains_fish": false,
     "fish_breaded": false,
@@ -677,14 +1477,56 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Rinderhackfleisch", "amount": 700, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Kidneybohnen (Dose)", "amount": 400, "unit": "g", "category": "Konserven"},
-      {"name": "Mais (Dose)", "amount": 300, "unit": "g", "category": "Konserven"},
-      {"name": "Gehackte Tomaten", "amount": 800, "unit": "g", "category": "Konserven"},
-      {"name": "Reis", "amount": 350, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Zwiebel", "amount": 2, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Paprikapulver edelsüß", "amount": 2, "unit": "TL", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Kreuzkümmel", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Rinderhackfleisch",
+        "amount": 700,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Kidneybohnen (Dose)",
+        "amount": 400,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Mais (Dose)",
+        "amount": 300,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Gehackte Tomaten",
+        "amount": 800,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Reis",
+        "amount": 350,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Paprikapulver edelsüß",
+        "amount": 2,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Kreuzkümmel",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Hack krümelig anbraten, Zwiebeln mitdünsten.",
@@ -692,7 +1534,8 @@
       "25 Minuten offen köcheln lassen.",
       "Abgetropfte Bohnen und Mais unterrühren, weitere 5 Minuten ziehen lassen.",
       "Reis kochen und dazu servieren."
-    ]
+    ],
+    "portion_g": 550
   },
   {
     "id": "tortellini-schinken-sahne",
@@ -701,12 +1544,18 @@
     "search": "tortellini käse sahne soße schinken",
     "servings": 4,
     "prep_minutes": 15,
-    "kcal": 610,
-    "protein_g": 32,
-    "carbs_g": 68,
-    "fat_g": 23,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["schnell", "familienessen"],
+    "kcal": 752,
+    "protein_g": 38,
+    "carbs_g": 78,
+    "fat_g": 32,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "schnell",
+      "familienessen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -715,12 +1564,43 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Tortellini (frisch)", "amount": 700, "unit": "g", "category": "Kühlregal"},
-      {"name": "Kochschinken", "amount": 200, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Frischkäse", "amount": 200, "unit": "g", "category": "Kühlregal"},
-      {"name": "Milch", "amount": 200, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Parmesan gerieben", "amount": 40, "unit": "g", "category": "Kühlregal"},
-      {"name": "Muskatnuss", "amount": 1, "unit": "Prise", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Tortellini (frisch)",
+        "amount": 700,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Kochschinken",
+        "amount": 200,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Frischkäse",
+        "amount": 200,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Milch",
+        "amount": 200,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Parmesan gerieben",
+        "amount": 40,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Muskatnuss",
+        "amount": 1,
+        "unit": "Prise",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Tortellini nach Packungsangabe kochen.",
@@ -728,7 +1608,8 @@
       "Frischkäse und Milch dazugeben und glatt rühren.",
       "Mit Parmesan, Salz, Pfeffer und Muskat abschmecken.",
       "Tortellini unterheben und sofort servieren."
-    ]
+    ],
+    "portion_g": 360
   },
   {
     "id": "wraps-haehnchen-frischkaese",
@@ -737,12 +1618,19 @@
     "search": "wraps hähnchen frischkäse",
     "servings": 4,
     "prep_minutes": 25,
-    "kcal": 540,
-    "protein_g": 42,
-    "carbs_g": 50,
-    "fat_g": 17,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["vorbereiten", "mitnehmen", "schnell"],
+    "kcal": 731,
+    "protein_g": 52,
+    "carbs_g": 63,
+    "fat_g": 30,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "vorbereiten",
+      "mitnehmen",
+      "schnell"
+    ],
     "veggie_level": "medium",
     "contains_fish": false,
     "fish_breaded": false,
@@ -751,19 +1639,51 @@
     "meal_prep": true,
     "freezable": false,
     "ingredients": [
-      {"name": "Weizentortillas", "amount": 8, "unit": "Stück", "category": "Trockenwaren"},
-      {"name": "Hähnchenbrustfilet", "amount": 600, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Frischkäse", "amount": 200, "unit": "g", "category": "Kühlregal"},
-      {"name": "Eisbergsalat", "amount": 150, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Gouda gerieben", "amount": 80, "unit": "g", "category": "Kühlregal"},
-      {"name": "Paprikapulver edelsüß", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Weizentortillas",
+        "amount": 8,
+        "unit": "Stück",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Hähnchenbrustfilet",
+        "amount": 600,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Frischkäse",
+        "amount": 200,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Eisbergsalat",
+        "amount": 150,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Gouda gerieben",
+        "amount": 80,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Paprikapulver edelsüß",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Hähnchen in Streifen schneiden, würzen und anbraten, bis es durch ist.",
       "Tortillas kurz in einer trockenen Pfanne erwärmen.",
       "Mit Frischkäse bestreichen, Salat, Hähnchen und Käse darauf verteilen.",
       "Fest einrollen und halbieren."
-    ]
+    ],
+    "portion_g": 380
   },
   {
     "id": "bratkartoffeln-spiegelei",
@@ -772,12 +1692,19 @@
     "search": "bratkartoffeln spiegelei schinken",
     "servings": 4,
     "prep_minutes": 30,
-    "kcal": 580,
-    "protein_g": 28,
-    "carbs_g": 58,
-    "fat_g": 26,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["klassiker", "günstig", "schnell"],
+    "kcal": 402,
+    "protein_g": 20,
+    "carbs_g": 48,
+    "fat_g": 14,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "klassiker",
+      "günstig",
+      "schnell"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -786,18 +1713,45 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Kartoffeln festkochend", "amount": 1200, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Eier", "amount": 4, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Kochschinken", "amount": 150, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Rapsöl", "amount": 30, "unit": "ml", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Kartoffeln festkochend",
+        "amount": 1200,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Eier",
+        "amount": 4,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Kochschinken",
+        "amount": 150,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Rapsöl",
+        "amount": 30,
+        "unit": "ml",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Kartoffeln am Vortag kochen, schälen und in Scheiben schneiden.",
       "In Öl bei mittlerer Hitze goldbraun braten, erst spät wenden.",
       "Zwiebel und Schinken dazugeben und mitbraten.",
       "Spiegeleier in einer zweiten Pfanne braten, bis das Eiweiß fest ist und das Eigelb gestockt – so sind sie auch in der Stillzeit unbedenklich."
-    ]
+    ],
+    "portion_g": 420
   },
   {
     "id": "haehnchen-nuggets-kartoffelecken",
@@ -806,12 +1760,19 @@
     "search": "hähnchen nuggets selbstgemacht kartoffelecken",
     "servings": 4,
     "prep_minutes": 40,
-    "kcal": 590,
-    "protein_g": 46,
-    "carbs_g": 56,
-    "fat_g": 19,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["paniert", "ofen", "familienessen"],
+    "kcal": 591,
+    "protein_g": 52,
+    "carbs_g": 68,
+    "fat_g": 13,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "paniert",
+      "ofen",
+      "familienessen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -820,13 +1781,50 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Hähnchenbrustfilet", "amount": 700, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Kartoffeln festkochend", "amount": 1000, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Cornflakes ungesüßt", "amount": 100, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Eier", "amount": 2, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Weizenmehl", "amount": 50, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Paprikapulver edelsüß", "amount": 2, "unit": "TL", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Rapsöl", "amount": 25, "unit": "ml", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Hähnchenbrustfilet",
+        "amount": 700,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Kartoffeln festkochend",
+        "amount": 1000,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Cornflakes ungesüßt",
+        "amount": 100,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Eier",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Weizenmehl",
+        "amount": 50,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Paprikapulver edelsüß",
+        "amount": 2,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Rapsöl",
+        "amount": 25,
+        "unit": "ml",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Kartoffeln in Ecken schneiden, mit Öl, Salz und Paprikapulver mischen und bei 220 °C 30 Minuten backen.",
@@ -834,7 +1832,8 @@
       "Hähnchen in Stücke schneiden, in Mehl, Ei und Cornflakes wenden.",
       "Auf ein Blech legen und 18 Minuten mitbacken, einmal wenden.",
       "Nuggets vor dem Servieren aufschneiden und prüfen, dass sie durch sind."
-    ]
+    ],
+    "portion_g": 500
   },
   {
     "id": "hackbraten-kartoffeln",
@@ -843,12 +1842,19 @@
     "search": "hackbraten kartoffeln soße",
     "servings": 6,
     "prep_minutes": 70,
-    "kcal": 620,
-    "protein_g": 44,
-    "carbs_g": 48,
-    "fat_g": 27,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["ofen", "klassiker", "vorbereiten"],
+    "kcal": 700,
+    "protein_g": 39,
+    "carbs_g": 42,
+    "fat_g": 42,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "ofen",
+      "klassiker",
+      "vorbereiten"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -857,14 +1863,55 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Gemischtes Hackfleisch", "amount": 1000, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Kartoffeln festkochend", "amount": 1200, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Eier", "amount": 2, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Semmelbrösel", "amount": 60, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Zwiebel", "amount": 2, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Gemüsebrühe", "amount": 400, "unit": "ml", "category": "Trockenwaren"},
-      {"name": "Schmand", "amount": 150, "unit": "g", "category": "Kühlregal"},
-      {"name": "Senf", "amount": 1, "unit": "EL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Gemischtes Hackfleisch",
+        "amount": 1000,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Kartoffeln festkochend",
+        "amount": 1200,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Eier",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Semmelbrösel",
+        "amount": 60,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Gemüsebrühe",
+        "amount": 400,
+        "unit": "ml",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Schmand",
+        "amount": 150,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Senf",
+        "amount": 1,
+        "unit": "EL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Hack mit Eiern, Semmelbröseln, Zwiebeln, Senf, Salz und Pfeffer verkneten.",
@@ -872,7 +1919,8 @@
       "Kartoffeln in Salzwasser garen.",
       "Bratensaft mit Brühe aufkochen, Schmand einrühren und abschmecken.",
       "Hackbraten in Scheiben schneiden – die Mitte muss durchgegart sein."
-    ]
+    ],
+    "portion_g": 520
   },
   {
     "id": "quesadillas-haehnchen",
@@ -881,12 +1929,18 @@
     "search": "quesadillas hähnchen käse",
     "servings": 4,
     "prep_minutes": 25,
-    "kcal": 560,
-    "protein_g": 40,
-    "carbs_g": 48,
-    "fat_g": 22,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["schnell", "familienessen"],
+    "kcal": 781,
+    "protein_g": 53,
+    "carbs_g": 68,
+    "fat_g": 33,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "schnell",
+      "familienessen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -895,19 +1949,51 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Weizentortillas", "amount": 8, "unit": "Stück", "category": "Trockenwaren"},
-      {"name": "Hähnchenbrustfilet", "amount": 500, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Gouda gerieben", "amount": 200, "unit": "g", "category": "Kühlregal"},
-      {"name": "Mais (Dose)", "amount": 150, "unit": "g", "category": "Konserven"},
-      {"name": "Schmand", "amount": 100, "unit": "g", "category": "Kühlregal"},
-      {"name": "Paprikapulver edelsüß", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Weizentortillas",
+        "amount": 8,
+        "unit": "Stück",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Hähnchenbrustfilet",
+        "amount": 500,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Gouda gerieben",
+        "amount": 200,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Mais (Dose)",
+        "amount": 150,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Schmand",
+        "amount": 100,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Paprikapulver edelsüß",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Hähnchen klein würfeln, würzen und durchbraten.",
       "Eine Tortilla in die trockene Pfanne legen, mit Käse, Hähnchen und Mais belegen.",
       "Zweite Tortilla auflegen und von beiden Seiten goldbraun backen.",
       "In Ecken schneiden und mit Schmand servieren."
-    ]
+    ],
+    "portion_g": 360
   },
   {
     "id": "nudelsalat-haehnchen-mais",
@@ -916,12 +2002,18 @@
     "search": "nudelsalat hähnchen mais joghurt",
     "servings": 4,
     "prep_minutes": 30,
-    "kcal": 550,
-    "protein_g": 38,
-    "carbs_g": 58,
-    "fat_g": 17,
-    "meal_types": ["lunch"],
-    "tags": ["vorbereiten", "mitnehmen", "kalt"],
+    "kcal": 652,
+    "protein_g": 46,
+    "carbs_g": 89,
+    "fat_g": 11,
+    "meal_types": [
+      "lunch"
+    ],
+    "tags": [
+      "vorbereiten",
+      "mitnehmen",
+      "kalt"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -930,13 +2022,48 @@
     "meal_prep": true,
     "freezable": false,
     "ingredients": [
-      {"name": "Nudeln", "amount": 400, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Hähnchenbrustfilet", "amount": 500, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Mais (Dose)", "amount": 300, "unit": "g", "category": "Konserven"},
-      {"name": "Naturjoghurt", "amount": 250, "unit": "g", "category": "Kühlregal"},
-      {"name": "Mayonnaise leicht", "amount": 60, "unit": "g", "category": "Kühlregal"},
-      {"name": "Gewürzgurken", "amount": 100, "unit": "g", "category": "Konserven"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"}
+      {
+        "name": "Nudeln",
+        "amount": 400,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Hähnchenbrustfilet",
+        "amount": 500,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Mais (Dose)",
+        "amount": 300,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Naturjoghurt",
+        "amount": 250,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Mayonnaise leicht",
+        "amount": 60,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Gewürzgurken",
+        "amount": 100,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      }
     ],
     "steps": [
       "Nudeln kochen, kalt abschrecken und gut abtropfen lassen.",
@@ -944,7 +2071,8 @@
       "Joghurt, Mayonnaise, etwas Gurkenwasser, Salz und Pfeffer zu einem Dressing rühren.",
       "Alles mit Mais, gewürfelten Gurken und Zwiebel mischen.",
       "Mindestens eine Stunde durchziehen lassen."
-    ]
+    ],
+    "portion_g": 570
   },
   {
     "id": "kartoffelgulasch-wuerstchen",
@@ -953,12 +2081,19 @@
     "search": "kartoffelgulasch würstchen",
     "servings": 4,
     "prep_minutes": 40,
-    "kcal": 560,
-    "protein_g": 26,
-    "carbs_g": 60,
-    "fat_g": 23,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["one pot", "günstig", "vorbereiten"],
+    "kcal": 530,
+    "protein_g": 18,
+    "carbs_g": 49,
+    "fat_g": 28,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "one pot",
+      "günstig",
+      "vorbereiten"
+    ],
     "veggie_level": "medium",
     "contains_fish": false,
     "fish_breaded": false,
@@ -967,13 +2102,50 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Kartoffeln festkochend", "amount": 1000, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Wiener Würstchen", "amount": 400, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Zwiebel", "amount": 2, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Gehackte Tomaten", "amount": 400, "unit": "g", "category": "Konserven"},
-      {"name": "Gemüsebrühe", "amount": 500, "unit": "ml", "category": "Trockenwaren"},
-      {"name": "Paprikapulver edelsüß", "amount": 2, "unit": "TL", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Rapsöl", "amount": 15, "unit": "ml", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Kartoffeln festkochend",
+        "amount": 1000,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Wiener Würstchen",
+        "amount": 400,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Gehackte Tomaten",
+        "amount": 400,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Gemüsebrühe",
+        "amount": 500,
+        "unit": "ml",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Paprikapulver edelsüß",
+        "amount": 2,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Rapsöl",
+        "amount": 15,
+        "unit": "ml",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Zwiebeln in Öl andünsten, Paprikapulver kurz mitrösten.",
@@ -981,7 +2153,8 @@
       "20 Minuten köcheln lassen, bis die Kartoffeln weich sind.",
       "Würstchen in Scheiben schneiden und die letzten 5 Minuten erhitzen.",
       "Mit Salz und Pfeffer abschmecken."
-    ]
+    ],
+    "portion_g": 630
   },
   {
     "id": "backfisch-kartoffelsalat",
@@ -990,12 +2163,19 @@
     "search": "backfisch kartoffelsalat",
     "servings": 4,
     "prep_minutes": 45,
-    "kcal": 640,
-    "protein_g": 36,
-    "carbs_g": 62,
-    "fat_g": 27,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["paniert", "klassiker", "familienessen"],
+    "kcal": 555,
+    "protein_g": 24,
+    "carbs_g": 66,
+    "fat_g": 21,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "paniert",
+      "klassiker",
+      "familienessen"
+    ],
     "veggie_level": "low",
     "contains_fish": true,
     "fish_breaded": true,
@@ -1004,13 +2184,48 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Backfisch paniert (TK)", "amount": 600, "unit": "g", "category": "Tiefkühl"},
-      {"name": "Kartoffeln festkochend", "amount": 1000, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Gemüsebrühe", "amount": 200, "unit": "ml", "category": "Trockenwaren"},
-      {"name": "Gewürzgurken", "amount": 100, "unit": "g", "category": "Konserven"},
-      {"name": "Mayonnaise leicht", "amount": 80, "unit": "g", "category": "Kühlregal"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Zitrone", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"}
+      {
+        "name": "Backfisch paniert (TK)",
+        "amount": 600,
+        "unit": "g",
+        "category": "Tiefkühl"
+      },
+      {
+        "name": "Kartoffeln festkochend",
+        "amount": 1000,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Gemüsebrühe",
+        "amount": 200,
+        "unit": "ml",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Gewürzgurken",
+        "amount": 100,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Mayonnaise leicht",
+        "amount": 80,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Zitrone",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      }
     ],
     "steps": [
       "Kartoffeln als Pellkartoffeln kochen, pellen und in Scheiben schneiden.",
@@ -1018,7 +2233,8 @@
       "Gurken und Mayonnaise unterheben, mit Salz und Pfeffer abschmecken.",
       "Backfisch nach Packungsangabe im Ofen goldbraun backen, bis er innen durch ist.",
       "Mit Zitrone servieren."
-    ]
+    ],
+    "portion_g": 540
   },
   {
     "id": "bulgur-hackpfanne",
@@ -1027,12 +2243,19 @@
     "search": "bulgur hackfleisch pfanne",
     "servings": 4,
     "prep_minutes": 30,
-    "kcal": 580,
+    "kcal": 668,
     "protein_g": 42,
     "carbs_g": 62,
-    "fat_g": 16,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["one pot", "vorbereiten", "proteinreich"],
+    "fat_g": 24,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "one pot",
+      "vorbereiten",
+      "proteinreich"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1041,20 +2264,57 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Rinderhackfleisch", "amount": 600, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Bulgur", "amount": 300, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Mais (Dose)", "amount": 200, "unit": "g", "category": "Konserven"},
-      {"name": "Passierte Tomaten", "amount": 250, "unit": "g", "category": "Konserven"},
-      {"name": "Gemüsebrühe", "amount": 600, "unit": "ml", "category": "Trockenwaren"},
-      {"name": "Zwiebel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Paprikapulver edelsüß", "amount": 2, "unit": "TL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Rinderhackfleisch",
+        "amount": 600,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Bulgur",
+        "amount": 300,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Mais (Dose)",
+        "amount": 200,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Passierte Tomaten",
+        "amount": 250,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Gemüsebrühe",
+        "amount": 600,
+        "unit": "ml",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Zwiebel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Paprikapulver edelsüß",
+        "amount": 2,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Hack krümelig anbraten, Zwiebel mitdünsten.",
       "Bulgur kurz mitrösten, mit Brühe und passierten Tomaten ablöschen.",
       "Zugedeckt 12 Minuten quellen lassen.",
       "Mais unterheben und mit Paprikapulver, Salz und Pfeffer abschmecken."
-    ]
+    ],
+    "portion_g": 650
   },
   {
     "id": "ofen-feta-nudeln",
@@ -1063,12 +2323,19 @@
     "search": "ofen feta nudeln",
     "servings": 4,
     "prep_minutes": 40,
-    "kcal": 600,
-    "protein_g": 26,
-    "carbs_g": 72,
-    "fat_g": 22,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["ofen", "vegetarisch", "einfach"],
+    "kcal": 699,
+    "protein_g": 27,
+    "carbs_g": 77,
+    "fat_g": 30,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "ofen",
+      "vegetarisch",
+      "einfach"
+    ],
     "veggie_level": "medium",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1077,12 +2344,44 @@
     "meal_prep": true,
     "freezable": false,
     "ingredients": [
-      {"name": "Nudeln", "amount": 400, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Feta (pasteurisiert)", "amount": 400, "unit": "g", "category": "Kühlregal"},
-      {"name": "Kirschtomaten", "amount": 500, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Knoblauchzehe", "amount": 2, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Olivenöl", "amount": 30, "unit": "ml", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Oregano", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Nudeln",
+        "amount": 400,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Feta (pasteurisiert)",
+        "amount": 400,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Kirschtomaten",
+        "amount": 500,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Knoblauchzehe",
+        "amount": 2,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Olivenöl",
+        "amount": 30,
+        "unit": "ml",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Oregano",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Feta in die Mitte einer Auflaufform legen, Tomaten drumherum verteilen.",
@@ -1090,7 +2389,8 @@
       "Bei 200 °C 30 Minuten backen.",
       "Nudeln kochen, alles in der Form cremig verrühren.",
       "Nur pasteurisierten Feta verwenden – dann ist das Gericht auch in der Stillzeit sicher."
-    ]
+    ],
+    "portion_g": 480
   },
   {
     "id": "haehnchenbrust-kraeuterkruste",
@@ -1099,12 +2399,19 @@
     "search": "hähnchenbrust kräuterkruste reis",
     "servings": 4,
     "prep_minutes": 35,
-    "kcal": 550,
-    "protein_g": 50,
-    "carbs_g": 52,
-    "fat_g": 13,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["proteinreich", "ofen", "leicht"],
+    "kcal": 578,
+    "protein_g": 51,
+    "carbs_g": 67,
+    "fat_g": 12,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "proteinreich",
+      "ofen",
+      "leicht"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1113,20 +2420,56 @@
     "meal_prep": true,
     "freezable": false,
     "ingredients": [
-      {"name": "Hähnchenbrustfilet", "amount": 700, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Reis", "amount": 280, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Semmelbrösel", "amount": 60, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Petersilie", "amount": 15, "unit": "g", "category": "Obst & Gemüse"},
-      {"name": "Parmesan gerieben", "amount": 40, "unit": "g", "category": "Kühlregal"},
-      {"name": "Butter", "amount": 20, "unit": "g", "category": "Kühlregal"},
-      {"name": "Zitrone", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"}
+      {
+        "name": "Hähnchenbrustfilet",
+        "amount": 700,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Reis",
+        "amount": 280,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Semmelbrösel",
+        "amount": 60,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Petersilie",
+        "amount": 15,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Parmesan gerieben",
+        "amount": 40,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Butter",
+        "amount": 20,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Zitrone",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      }
     ],
     "steps": [
       "Semmelbrösel, gehackte Petersilie, Parmesan und weiche Butter zu einer Kruste mischen.",
       "Hähnchenbrust salzen, in eine Form legen und die Kruste aufstreichen.",
       "Bei 190 °C 22 Minuten backen, bis die Kerntemperatur 75 °C erreicht.",
       "Reis kochen und mit einem Spritzer Zitrone servieren."
-    ]
+    ],
+    "portion_g": 410
   },
   {
     "id": "toast-hawaii-leicht",
@@ -1135,12 +2478,18 @@
     "search": "toast hawaii",
     "servings": 4,
     "prep_minutes": 15,
-    "kcal": 480,
-    "protein_g": 34,
-    "carbs_g": 46,
-    "fat_g": 16,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["schnell", "klassiker"],
+    "kcal": 405,
+    "protein_g": 25,
+    "carbs_g": 40,
+    "fat_g": 15,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "schnell",
+      "klassiker"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1149,18 +2498,44 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Vollkorntoast", "amount": 8, "unit": "Scheiben", "category": "Trockenwaren"},
-      {"name": "Putenschinken", "amount": 200, "unit": "g", "category": "Fleisch & Wurst"},
-      {"name": "Ananas (Dose)", "amount": 250, "unit": "g", "category": "Konserven"},
-      {"name": "Gouda in Scheiben", "amount": 160, "unit": "g", "category": "Kühlregal"},
-      {"name": "Eisbergsalat", "amount": 100, "unit": "g", "category": "Obst & Gemüse"}
+      {
+        "name": "Vollkorntoast",
+        "amount": 8,
+        "unit": "Scheiben",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Putenschinken",
+        "amount": 200,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      },
+      {
+        "name": "Ananas (Dose)",
+        "amount": 250,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Gouda in Scheiben",
+        "amount": 160,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Eisbergsalat",
+        "amount": 100,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      }
     ],
     "steps": [
       "Toast leicht rösten.",
       "Mit Schinken, einer Ananasscheibe und Käse belegen.",
       "Bei 220 °C Oberhitze 8 Minuten überbacken, bis der Käse Farbe nimmt.",
       "Mit etwas Salat dazu servieren."
-    ]
+    ],
+    "portion_g": 250
   },
   {
     "id": "pfannkuchen-apfelmus",
@@ -1169,12 +2544,19 @@
     "search": "pfannkuchen apfelmus",
     "servings": 4,
     "prep_minutes": 30,
-    "kcal": 560,
-    "protein_g": 22,
-    "carbs_g": 74,
-    "fat_g": 19,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["süß", "familienessen", "günstig"],
+    "kcal": 530,
+    "protein_g": 20,
+    "carbs_g": 77,
+    "fat_g": 15,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "süß",
+      "familienessen",
+      "günstig"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1183,19 +2565,51 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Weizenmehl", "amount": 300, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Eier", "amount": 4, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Milch", "amount": 600, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Apfelmus", "amount": 400, "unit": "g", "category": "Konserven"},
-      {"name": "Butter", "amount": 30, "unit": "g", "category": "Kühlregal"},
-      {"name": "Zucker", "amount": 20, "unit": "g", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Weizenmehl",
+        "amount": 300,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Eier",
+        "amount": 4,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Milch",
+        "amount": 600,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Apfelmus",
+        "amount": 400,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Butter",
+        "amount": 30,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Zucker",
+        "amount": 20,
+        "unit": "g",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Mehl, Eier, Milch, Zucker und eine Prise Salz zu einem glatten Teig rühren.",
       "20 Minuten quellen lassen.",
       "In wenig Butter dünne Pfannkuchen ausbacken.",
       "Mit Apfelmus servieren."
-    ]
+    ],
+    "portion_g": 390
   },
   {
     "id": "milchreis-zimt",
@@ -1204,12 +2618,20 @@
     "search": "milchreis zimt zucker",
     "servings": 4,
     "prep_minutes": 30,
-    "kcal": 470,
-    "protein_g": 18,
+    "kcal": 392,
+    "protein_g": 13,
     "carbs_g": 72,
-    "fat_g": 12,
-    "meal_types": ["lunch", "dinner", "snack"],
-    "tags": ["süß", "günstig", "familienessen"],
+    "fat_g": 4.4,
+    "meal_types": [
+      "lunch",
+      "dinner",
+      "snack"
+    ],
+    "tags": [
+      "süß",
+      "günstig",
+      "familienessen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1218,17 +2640,46 @@
     "meal_prep": true,
     "freezable": false,
     "ingredients": [
-      {"name": "Milchreis", "amount": 250, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Milch", "amount": 1000, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Zucker", "amount": 40, "unit": "g", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Zimt", "amount": 2, "unit": "TL", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Vanillezucker", "amount": 1, "unit": "Päckchen", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Milchreis",
+        "amount": 250,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Milch",
+        "amount": 1000,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Zucker",
+        "amount": 40,
+        "unit": "g",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Zimt",
+        "amount": 2,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Vanillezucker",
+        "amount": 1,
+        "unit": "Päckchen",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Milch mit Vanillezucker und einer Prise Salz aufkochen.",
       "Milchreis einrühren und bei kleiner Hitze 25 Minuten quellen lassen, dabei öfter rühren.",
       "Mit Zimt und Zucker bestreut servieren."
-    ]
+    ],
+    "portion_g": 330
   },
   {
     "id": "kaiserschmarrn-apfelmus",
@@ -1237,12 +2688,18 @@
     "search": "kaiserschmarrn apfelmus",
     "servings": 4,
     "prep_minutes": 30,
-    "kcal": 540,
-    "protein_g": 20,
-    "carbs_g": 72,
-    "fat_g": 19,
-    "meal_types": ["lunch", "dinner"],
-    "tags": ["süß", "familienessen"],
+    "kcal": 516,
+    "protein_g": 19,
+    "carbs_g": 73,
+    "fat_g": 15,
+    "meal_types": [
+      "lunch",
+      "dinner"
+    ],
+    "tags": [
+      "süß",
+      "familienessen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1251,13 +2708,49 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Weizenmehl", "amount": 250, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Eier", "amount": 5, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Milch", "amount": 400, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Rosinen", "amount": 60, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Apfelmus", "amount": 300, "unit": "g", "category": "Konserven"},
-      {"name": "Butter", "amount": 30, "unit": "g", "category": "Kühlregal"},
-      {"name": "Puderzucker", "amount": 20, "unit": "g", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Weizenmehl",
+        "amount": 250,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Eier",
+        "amount": 5,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Milch",
+        "amount": 400,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Rosinen",
+        "amount": 60,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Apfelmus",
+        "amount": 300,
+        "unit": "g",
+        "category": "Konserven"
+      },
+      {
+        "name": "Butter",
+        "amount": 30,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Puderzucker",
+        "amount": 20,
+        "unit": "g",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Eier trennen, Eiweiß steif schlagen.",
@@ -1265,7 +2758,8 @@
       "Teig mit Rosinen in Butter ausbacken, dann in Stücke reißen und karamellisieren.",
       "Mit Puderzucker bestäuben und mit Apfelmus servieren.",
       "Rum weglassen – so bleibt der Schmarrn stillfreundlich."
-    ]
+    ],
+    "portion_g": 330
   },
   {
     "id": "skyr-beeren-snack",
@@ -1274,12 +2768,18 @@
     "search": "skyr beeren snack",
     "servings": 1,
     "prep_minutes": 3,
-    "kcal": 150,
-    "protein_g": 20,
-    "carbs_g": 14,
+    "kcal": 134,
+    "protein_g": 17,
+    "carbs_g": 12,
     "fat_g": 0.5,
-    "meal_types": ["snack"],
-    "tags": ["schnell", "proteinreich", "ohne kochen"],
+    "meal_types": [
+      "snack"
+    ],
+    "tags": [
+      "schnell",
+      "proteinreich",
+      "ohne kochen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1288,10 +2788,23 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Skyr natur", "amount": 150, "unit": "g", "category": "Kühlregal"},
-      {"name": "Beeren (TK-Mischung)", "amount": 80, "unit": "g", "category": "Tiefkühl"}
+      {
+        "name": "Skyr natur",
+        "amount": 150,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Beeren (TK-Mischung)",
+        "amount": 80,
+        "unit": "g",
+        "category": "Tiefkühl"
+      }
     ],
-    "steps": ["Beeren auftauen lassen und unter den Skyr rühren."]
+    "steps": [
+      "Beeren auftauen lassen und unter den Skyr rühren."
+    ],
+    "portion_g": 230
   },
   {
     "id": "apfel-erdnussmus",
@@ -1300,12 +2813,18 @@
     "search": "apfel erdnussmus snack",
     "servings": 1,
     "prep_minutes": 3,
-    "kcal": 220,
-    "protein_g": 7,
-    "carbs_g": 24,
-    "fat_g": 11,
-    "meal_types": ["snack"],
-    "tags": ["schnell", "ohne kochen", "mitnehmen"],
+    "kcal": 193,
+    "protein_g": 5,
+    "carbs_g": 22,
+    "fat_g": 10,
+    "meal_types": [
+      "snack"
+    ],
+    "tags": [
+      "schnell",
+      "ohne kochen",
+      "mitnehmen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1314,10 +2833,23 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Apfel", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Erdnussmus", "amount": 20, "unit": "g", "category": "Trockenwaren"}
+      {
+        "name": "Apfel",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Erdnussmus",
+        "amount": 20,
+        "unit": "g",
+        "category": "Trockenwaren"
+      }
     ],
-    "steps": ["Apfel in Spalten schneiden und in das Erdnussmus dippen."]
+    "steps": [
+      "Apfel in Spalten schneiden und in das Erdnussmus dippen."
+    ],
+    "portion_g": 160
   },
   {
     "id": "huettenkaese-brot",
@@ -1326,12 +2858,19 @@
     "search": "hüttenkäse vollkornbrot",
     "servings": 1,
     "prep_minutes": 4,
-    "kcal": 230,
-    "protein_g": 18,
-    "carbs_g": 24,
-    "fat_g": 6,
-    "meal_types": ["snack", "breakfast"],
-    "tags": ["schnell", "herzhaft", "proteinreich"],
+    "kcal": 299,
+    "protein_g": 19,
+    "carbs_g": 37,
+    "fat_g": 7,
+    "meal_types": [
+      "snack",
+      "breakfast"
+    ],
+    "tags": [
+      "schnell",
+      "herzhaft",
+      "proteinreich"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1340,11 +2879,29 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Vollkornbrot", "amount": 2, "unit": "Scheiben", "category": "Trockenwaren"},
-      {"name": "Hüttenkäse", "amount": 100, "unit": "g", "category": "Kühlregal"},
-      {"name": "Schnittlauch", "amount": 3, "unit": "g", "category": "Obst & Gemüse"}
+      {
+        "name": "Vollkornbrot",
+        "amount": 2,
+        "unit": "Scheiben",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Hüttenkäse",
+        "amount": 100,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Schnittlauch",
+        "amount": 3,
+        "unit": "g",
+        "category": "Obst & Gemüse"
+      }
     ],
-    "steps": ["Brot mit Hüttenkäse bestreichen, salzen, pfeffern und mit Schnittlauch bestreuen."]
+    "steps": [
+      "Brot mit Hüttenkäse bestreichen, salzen, pfeffern und mit Schnittlauch bestreuen."
+    ],
+    "portion_g": 190
   },
   {
     "id": "protein-shake-banane",
@@ -1353,12 +2910,18 @@
     "search": "protein shake banane",
     "servings": 1,
     "prep_minutes": 3,
-    "kcal": 260,
-    "protein_g": 28,
-    "carbs_g": 28,
-    "fat_g": 3,
-    "meal_types": ["snack"],
-    "tags": ["schnell", "proteinreich", "nach dem sport"],
+    "kcal": 326,
+    "protein_g": 29,
+    "carbs_g": 42,
+    "fat_g": 5,
+    "meal_types": [
+      "snack"
+    ],
+    "tags": [
+      "schnell",
+      "proteinreich",
+      "nach dem sport"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1367,14 +2930,30 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Milch", "amount": 250, "unit": "ml", "category": "Kühlregal"},
-      {"name": "Banane", "amount": 1, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Proteinpulver Vanille", "amount": 25, "unit": "g", "category": "Trockenwaren"}
+      {
+        "name": "Milch",
+        "amount": 250,
+        "unit": "ml",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Banane",
+        "amount": 1,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Proteinpulver Vanille",
+        "amount": 25,
+        "unit": "g",
+        "category": "Trockenwaren"
+      }
     ],
     "steps": [
       "Alles zusammen mixen.",
       "In der Stillzeit ein einfaches Molkenprotein ohne Koffein oder Kräuterzusätze wählen."
-    ]
+    ],
+    "portion_g": 400
   },
   {
     "id": "quark-honig-snack",
@@ -1383,12 +2962,19 @@
     "search": "magerquark honig zimt",
     "servings": 1,
     "prep_minutes": 3,
-    "kcal": 190,
-    "protein_g": 26,
-    "carbs_g": 18,
-    "fat_g": 0.5,
-    "meal_types": ["snack"],
-    "tags": ["schnell", "süß", "proteinreich", "abends"],
+    "kcal": 179,
+    "protein_g": 24,
+    "carbs_g": 20,
+    "fat_g": 0.6,
+    "meal_types": [
+      "snack"
+    ],
+    "tags": [
+      "schnell",
+      "süß",
+      "proteinreich",
+      "abends"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1397,11 +2983,30 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Magerquark", "amount": 200, "unit": "g", "category": "Kühlregal"},
-      {"name": "Honig", "amount": 15, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Zimt", "amount": 1, "unit": "Prise", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Magerquark",
+        "amount": 200,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Honig",
+        "amount": 15,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Zimt",
+        "amount": 1,
+        "unit": "Prise",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
-    "steps": ["Quark mit etwas Wasser cremig rühren, Honig und Zimt unterziehen."]
+    "steps": [
+      "Quark mit etwas Wasser cremig rühren, Honig und Zimt unterziehen."
+    ],
+    "portion_g": 220
   },
   {
     "id": "reiswaffeln-frischkaese",
@@ -1410,12 +3015,18 @@
     "search": "reiswaffeln frischkäse schinken",
     "servings": 1,
     "prep_minutes": 3,
-    "kcal": 180,
+    "kcal": 244,
     "protein_g": 12,
-    "carbs_g": 20,
-    "fat_g": 6,
-    "meal_types": ["snack"],
-    "tags": ["schnell", "mitnehmen", "herzhaft"],
+    "carbs_g": 24,
+    "fat_g": 11,
+    "meal_types": [
+      "snack"
+    ],
+    "tags": [
+      "schnell",
+      "mitnehmen",
+      "herzhaft"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1424,11 +3035,29 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Reiswaffeln", "amount": 3, "unit": "Stück", "category": "Trockenwaren"},
-      {"name": "Frischkäse", "amount": 40, "unit": "g", "category": "Kühlregal"},
-      {"name": "Putenschinken", "amount": 40, "unit": "g", "category": "Fleisch & Wurst"}
+      {
+        "name": "Reiswaffeln",
+        "amount": 3,
+        "unit": "Stück",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Frischkäse",
+        "amount": 40,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Putenschinken",
+        "amount": 40,
+        "unit": "g",
+        "category": "Fleisch & Wurst"
+      }
     ],
-    "steps": ["Reiswaffeln mit Frischkäse bestreichen und mit Schinken belegen."]
+    "steps": [
+      "Reiswaffeln mit Frischkäse bestreichen und mit Schinken belegen."
+    ],
+    "portion_g": 105
   },
   {
     "id": "bananenbrot-scheibe",
@@ -1437,12 +3066,19 @@
     "search": "bananenbrot ohne zucker",
     "servings": 10,
     "prep_minutes": 60,
-    "kcal": 240,
+    "kcal": 193,
     "protein_g": 8,
-    "carbs_g": 34,
-    "fat_g": 8,
-    "meal_types": ["snack", "breakfast"],
-    "tags": ["backen", "vorbereiten", "süß"],
+    "carbs_g": 24,
+    "fat_g": 7,
+    "meal_types": [
+      "snack",
+      "breakfast"
+    ],
+    "tags": [
+      "backen",
+      "vorbereiten",
+      "süß"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1451,20 +3087,58 @@
     "meal_prep": true,
     "freezable": true,
     "ingredients": [
-      {"name": "Banane", "amount": 4, "unit": "Stück", "category": "Obst & Gemüse"},
-      {"name": "Haferflocken", "amount": 200, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Eier", "amount": 3, "unit": "Stück", "category": "Kühlregal"},
-      {"name": "Magerquark", "amount": 200, "unit": "g", "category": "Kühlregal"},
-      {"name": "Walnüsse", "amount": 60, "unit": "g", "category": "Trockenwaren"},
-      {"name": "Backpulver", "amount": 1, "unit": "Päckchen", "category": "Backen & Gewürze", "pantry": true},
-      {"name": "Zimt", "amount": 1, "unit": "TL", "category": "Backen & Gewürze", "pantry": true}
+      {
+        "name": "Banane",
+        "amount": 4,
+        "unit": "Stück",
+        "category": "Obst & Gemüse"
+      },
+      {
+        "name": "Haferflocken",
+        "amount": 200,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Eier",
+        "amount": 3,
+        "unit": "Stück",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Magerquark",
+        "amount": 200,
+        "unit": "g",
+        "category": "Kühlregal"
+      },
+      {
+        "name": "Walnüsse",
+        "amount": 60,
+        "unit": "g",
+        "category": "Trockenwaren"
+      },
+      {
+        "name": "Backpulver",
+        "amount": 1,
+        "unit": "Päckchen",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      },
+      {
+        "name": "Zimt",
+        "amount": 1,
+        "unit": "TL",
+        "category": "Backen & Gewürze",
+        "pantry": true
+      }
     ],
     "steps": [
       "Bananen zerdrücken, mit Quark und Eiern verrühren.",
       "Haferflocken, Backpulver, Zimt und gehackte Nüsse unterrühren.",
       "In eine Kastenform füllen und bei 175 °C 45 Minuten backen.",
       "Vollständig auskühlen lassen und in zehn Scheiben schneiden."
-    ]
+    ],
+    "portion_g": 115
   },
   {
     "id": "studentenfutter-portion",
@@ -1473,12 +3147,17 @@
     "search": "studentenfutter",
     "servings": 1,
     "prep_minutes": 1,
-    "kcal": 200,
+    "kcal": 168,
     "protein_g": 5,
-    "carbs_g": 16,
-    "fat_g": 13,
-    "meal_types": ["snack"],
-    "tags": ["ohne kochen", "mitnehmen"],
+    "carbs_g": 12,
+    "fat_g": 10,
+    "meal_types": [
+      "snack"
+    ],
+    "tags": [
+      "ohne kochen",
+      "mitnehmen"
+    ],
     "veggie_level": "low",
     "contains_fish": false,
     "fish_breaded": false,
@@ -1487,8 +3166,16 @@
     "meal_prep": false,
     "freezable": false,
     "ingredients": [
-      {"name": "Studentenfutter", "amount": 35, "unit": "g", "category": "Trockenwaren"}
+      {
+        "name": "Studentenfutter",
+        "amount": 35,
+        "unit": "g",
+        "category": "Trockenwaren"
+      }
     ],
-    "steps": ["35 g abwiegen und in eine kleine Dose füllen – nicht aus der Tüte essen."]
+    "steps": [
+      "35 g abwiegen und in eine kleine Dose füllen – nicht aus der Tüte essen."
+    ],
+    "portion_g": 35
   }
 ]

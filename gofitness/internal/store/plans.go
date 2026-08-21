@@ -176,21 +176,22 @@ func (s *Store) SetEntryCooked(ctx context.Context, userID string, entryID int64
 	return nil
 }
 
-// CountCookedMeals returns how many planned meals the user has ticked off.
-func (s *Store) CountCookedMeals(ctx context.Context, userID string) (int, error) {
+// CountCookedMeals returns how many planned meals the household has ticked off.
+// The plan is shared, so this counts across the whole household.
+func (s *Store) CountCookedMeals(ctx context.Context) (int, error) {
 	var n int
 	err := s.db.QueryRowContext(ctx, `
 		SELECT COUNT(*) FROM meal_plan_entries
 		 WHERE cooked = 1 AND plan_id IN (SELECT id FROM meal_plans WHERE user_id = ?)`,
-		userID).Scan(&n)
+		HouseholdID).Scan(&n)
 	return n, err
 }
 
-// CountPlans returns how many weeks the user has planned.
-func (s *Store) CountPlans(ctx context.Context, userID string) (int, error) {
+// CountPlans returns how many weeks the household has planned.
+func (s *Store) CountPlans(ctx context.Context) (int, error) {
 	var n int
 	err := s.db.QueryRowContext(ctx,
-		`SELECT COUNT(*) FROM meal_plans WHERE user_id = ?`, userID).Scan(&n)
+		`SELECT COUNT(*) FROM meal_plans WHERE user_id = ?`, HouseholdID).Scan(&n)
 	return n, err
 }
 

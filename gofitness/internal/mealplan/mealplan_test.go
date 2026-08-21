@@ -237,7 +237,7 @@ func TestCookOnceEatTwice(t *testing.T) {
 func TestShoppingListAggregates(t *testing.T) {
 	book := recipes.MustLoad()
 	plan := Generate(book, defaultOpts())
-	list := ShoppingList(book, plan, 2, "de")
+	list := ShoppingList(book, plan, "de")
 
 	if len(list) == 0 {
 		t.Fatal("empty shopping list")
@@ -260,15 +260,27 @@ func TestShoppingListAggregates(t *testing.T) {
 	}
 }
 
-func TestShoppingListScalesWithHousehold(t *testing.T) {
+func TestShoppingListScalesWithPortions(t *testing.T) {
 	book := recipes.MustLoad()
 	plan := Generate(book, defaultOpts())
 
-	one := totalAmount(ShoppingList(book, plan, 1, "de"))
-	four := totalAmount(ShoppingList(book, plan, 4, "de"))
+	one := totalAmount(ShoppingList(book, plan, "de"))
 
-	if four <= one*2 {
-		t.Errorf("four people (%.0f) should need far more than one (%.0f)", four, one)
+	// The plan's portions already cover the whole household; doubling every
+	// entry's portion count must roughly double the shopping.
+	doubled := plan
+	for i := range doubled.Days {
+		entries := make([]Entry, len(doubled.Days[i].Entries))
+		copy(entries, doubled.Days[i].Entries)
+		for j := range entries {
+			entries[j].Portions *= 2
+		}
+		doubled.Days[i].Entries = entries
+	}
+	two := totalAmount(ShoppingList(book, doubled, "de"))
+
+	if two <= one*1.5 {
+		t.Errorf("double the portions (%.0f) should need far more than single (%.0f)", two, one)
 	}
 }
 
@@ -291,7 +303,7 @@ func TestShoppingListSkipsLeftovers(t *testing.T) {
 
 	// Leftovers must not be bought twice: the same dish eaten a second time
 	// adds nothing to the list.
-	list := ShoppingList(book, planA, 2, "de")
+	list := ShoppingList(book, planA, "de")
 	if len(list) == 0 {
 		t.Fatal("empty shopping list")
 	}
@@ -315,7 +327,7 @@ func TestShoppingListSkipsLeftovers(t *testing.T) {
 			inflated.Days[i].Entries[j].Leftover = false
 		}
 	}
-	if totalAmount(ShoppingList(book, inflated, 2, "de")) <= totalAmount(list) {
+	if totalAmount(ShoppingList(book, inflated, "de")) <= totalAmount(list) {
 		t.Error("leftovers are being added to the shopping list")
 	}
 }
@@ -324,8 +336,8 @@ func TestShoppingListLocalises(t *testing.T) {
 	book := recipes.MustLoad()
 	plan := Generate(book, defaultOpts())
 
-	de := ShoppingList(book, plan, 2, "de")
-	en := ShoppingList(book, plan, 2, "en")
+	de := ShoppingList(book, plan, "de")
+	en := ShoppingList(book, plan, "en")
 
 	if len(de) != len(en) {
 		t.Fatalf("language changed the list length: %d vs %d", len(de), len(en))

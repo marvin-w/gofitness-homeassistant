@@ -163,6 +163,15 @@ func (s *Server) wrap(h handlerFunc) http.HandlerFunc {
 			}
 		}
 
+		// The meal-planning preferences are shared by the whole household, so the
+		// global settings are overlaid on top of this profile. Only the interface
+		// language stays personal.
+		if hp, err := s.store.HouseholdPrefs(ctx); err == nil {
+			lang := prof.Prefs.Language
+			prof.Prefs = hp
+			prof.Prefs.Language = lang
+		}
+
 		rc := &reqCtx{
 			User: prof,
 			HA:   haUser,

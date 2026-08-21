@@ -21,10 +21,19 @@ First release.
 - **Sustainable, healthy-BMI targeting** — no crash diets; a muscle-building goal
   at BMI ≥ 27 automatically falls back to recomposition.
 - **43 real recipes** in German and English with ingredient lists, a durable
-  recipe search link, and "cook once, eat twice" leftovers.
-- **Household meal planner** — a full week for two people with an aggregated
-  shopping list, honouring the "little fish / only breaded" and "little veg"
-  household constraints.
+  recipe search link, and "cook once, eat twice" leftovers. Every recipe states
+  one portion's weight, and its kcal/macros are computed from a single documented
+  ingredient table (`tools/nutrition/`) rather than guessed.
+- **One shared household meal plan** — everyone in the home sees, cooks from and
+  ticks off the same weekly plan and shopping list. It is sized to the combined
+  calorie target of all household members, made breastfeeding-safe if anyone is
+  nursing, and always reuses leftovers. The plan shows how much to cook, honouring
+  the "little fish / only breaded" and "little veg" constraints.
+- **Global meal-planning settings** — fish, veg, household size, meals per day and
+  cook time are shared by the household; personal health data and language stay
+  per-user.
+- **Progress projection** — current BMI and a deliberately pessimistic estimate of
+  the weeks to the next checkpoint and to the goal, so it never adds pressure.
 - **Food logging** — planned meals are logged exactly; ad-hoc food is estimated
   by an offline food table (~85 common foods, DE/EN) or, with an Anthropic API
   key, by Claude — including **photo recognition** that asks you to confirm.

@@ -424,6 +424,68 @@ func Milestones(startKg, currentKg, targetKg, heightCm float64) []Milestone {
 	return append(out, goal)
 }
 
+// pessimismFactor pads time estimates. Real weight change is slower than the
+// pure calorie maths predicts — water retention, plateaus and the odd birthday
+// cake all get in the way — so the app deliberately over-estimates how long
+// things take. Beating a cautious estimate feels good; missing an optimistic
+// one creates the pressure this app is trying to avoid.
+const pessimismFactor = 1.4
+
+// Projection is a conservative, low-pressure forecast of the journey from the
+// current weight. Week counts are padded (see pessimismFactor) so they
+// under-promise on purpose.
+type Projection struct {
+	CurrentBMI  float64 `json:"current_bmi"`
+	BMICategory string  `json:"bmi_category"`
+	// NextMilestoneKg is the next ~2 kg checkpoint not yet reached; equal to the
+	// goal once the last checkpoint is passed.
+	NextMilestoneKg      float64 `json:"next_milestone_kg"`
+	WeeksToNextMilestone int     `json:"weeks_to_next_milestone"`
+	WeeksToGoal          int     `json:"weeks_to_goal"`
+	// Moving is false at maintenance or when already at the goal, so the UI can
+	// show "you're there" rather than a meaningless week count.
+	Moving bool `json:"moving"`
+}
+
+// Project forecasts progress from the current weight toward the target, using
+// the plan's expected weekly change. Estimates are intentionally pessimistic.
+func Project(startKg, currentKg, targetKg, heightCm, weeklyChangeKg float64) Projection {
+	pr := Projection{
+		CurrentBMI:      round1(BMI(currentKg, heightCm)),
+		BMICategory:     BMICategory(BMI(currentKg, heightCm)),
+		NextMilestoneKg: round1(targetKg),
+	}
+	if targetKg <= 0 {
+		pr.NextMilestoneKg = round1(currentKg)
+		return pr
+	}
+
+	// The next checkpoint is the first milestone the user has not reached yet.
+	for _, m := range Milestones(startKg, currentKg, targetKg, heightCm) {
+		if !m.Reached {
+			pr.NextMilestoneKg = m.WeightKg
+			break
+		}
+	}
+
+	rate := math.Abs(weeklyChangeKg) // kg per week, regardless of direction
+	if rate < 0.01 {
+		return pr // maintenance, or no deficit/surplus: no honest ETA
+	}
+	pr.Moving = true
+
+	weeks := func(fromKg, toKg float64) int {
+		gap := math.Abs(fromKg - toKg)
+		if gap < 0.05 {
+			return 0
+		}
+		return int(math.Ceil(gap / rate * pessimismFactor))
+	}
+	pr.WeeksToNextMilestone = weeks(currentKg, pr.NextMilestoneKg)
+	pr.WeeksToGoal = weeks(currentKg, targetKg)
+	return pr
+}
+
 // KcalFromMacros reconstructs energy from macros (4/4/9 kcal per gram).
 func KcalFromMacros(proteinG, carbsG, fatG float64) float64 {
 	return math.Round(proteinG*4 + carbsG*4 + fatG*9)
